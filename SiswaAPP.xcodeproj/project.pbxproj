@@ -14,6 +14,7 @@
 		04DFB5C12616B92700B68735 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DFB5C02616B92700B68735 /* Preview Assets.xcassets */; };
 		04DFB5C42616B92700B68735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DFB5C22616B92700B68735 /* LaunchScreen.storyboard */; };
 		04DFB5D12616B9EE00B68735 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5D02616B9EE00B68735 /* LoginView.swift */; };
+		04DFB5D42616BB5300B68735 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5D32616BB5300B68735 /* AuthModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		04DFB5C32616B92700B68735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DFB5C52616B92700B68735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DFB5D02616B9EE00B68735 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		04DFB5D32616BB5300B68735 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		04DFB5CE2616B98F00B68735 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04DFB5D32616BB5300B68735 /* AuthModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */,
 				04DFB5D12616B9EE00B68735 /* LoginView.swift in Sources */,
 				04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */,
+				04DFB5D42616BB5300B68735 /* AuthModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
