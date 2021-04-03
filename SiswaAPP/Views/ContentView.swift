@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var authUser : AuthModel
+    @EnvironmentObject var authUser : LoginController
     
     func logout(){
         authUser.isLogin = false

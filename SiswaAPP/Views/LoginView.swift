@@ -15,7 +15,7 @@ struct LoginView: View {
 
 struct Login : View {
     
-    @EnvironmentObject var userAuth : AuthModel
+    @EnvironmentObject var userAuth : LoginController
     
     @State var username: String = ""
     @State var password: String = ""
@@ -23,15 +23,8 @@ struct Login : View {
     
     let lightGrayColor = Color(red: 239.0/255.0, green: 243.0/255.0, blue: 244.0/255.0, opacity: 1.0)
     
-    func cekLogin() {
-        if (username == "Admin" && password == "123"){
-            userAuth.isLogin = true
-        }else{
-            userAuth.isLogin = false
-            userAuth.isCorrect = false
-            self.showAlert = true
-        }
-    }
+    //form validation
+    @State var isEmptyField :Bool = false
     
     var body: some View {
         ZStack {
@@ -62,19 +55,19 @@ struct Login : View {
                 
                 VStack(alignment: .leading) {
                    
-                   
-                    
                     Text("username")
                     TextField("Useranme...", text:$username)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
+                        .autocapitalization(.none)
                     
                     Text("Password")
                     SecureField("Password...",text:$password)
                         .padding()
                         .background(lightGrayColor)
                         .cornerRadius(5.0)
+                        .autocapitalization(.none)
                     
                     HStack {
                         Button(action:{}){
@@ -86,7 +79,11 @@ struct Login : View {
                         Spacer()
                         Button( action: {
                             //action button here
-                            self.cekLogin()
+                            if(self.username.isEmpty || self.password.isEmpty){
+                                self.isEmptyField = true
+                            }else{
+                                self.userAuth.cekLogin(username: self.username, password: self.password)
+                            }
                         }){
                             Text("Login").bold().font(.callout).foregroundColor(.white)
                         }

@@ -1,8 +1,8 @@
 //
-//  AuthModel.swift
+//  LoginController.swift
 //  SiswaAPP
 //
-//  Created by Asrul Cahyadi Putra on 02/04/21.
+//  Created by Asrul Cahyadi Putra on 03/04/21.
 //
 
 import Foundation
@@ -10,9 +10,9 @@ import Combine
 import SwiftUI
 import Alamofire
 
-class AuthModel: ObservableObject {
+class LoginController: ObservableObject {
     //didChange
-    var didChange = PassthroughSubject<AuthModel, Never>()
+    var didChange = PassthroughSubject<LoginController, Never>()
     
     @Published var isLogin : Bool = false {
         didSet {

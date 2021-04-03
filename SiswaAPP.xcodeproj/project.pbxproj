@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01BA8AC39B37171B622D0874 /* Pods_SiswaAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B617A8B32463393FDEDC1517 /* Pods_SiswaAPP.framework */; };
 		04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B72616B92300B68735 /* AppDelegate.swift */; };
 		04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B92616B92300B68735 /* SceneDelegate.swift */; };
 		04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5BB2616B92300B68735 /* ContentView.swift */; };
@@ -14,7 +15,12 @@
 		04DFB5C12616B92700B68735 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DFB5C02616B92700B68735 /* Preview Assets.xcassets */; };
 		04DFB5C42616B92700B68735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DFB5C22616B92700B68735 /* LaunchScreen.storyboard */; };
 		04DFB5D12616B9EE00B68735 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5D02616B9EE00B68735 /* LoginView.swift */; };
-		04DFB5D42616BB5300B68735 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5D32616BB5300B68735 /* AuthModel.swift */; };
+		04FE33E62616DEAE0004D0C3 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE33E52616DEAE0004D0C3 /* LoginModel.swift */; };
+		04FE33ED261815BA0004D0C3 /* PelajaranView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE33EC261815B90004D0C3 /* PelajaranView.swift */; };
+		04FE33F0261816C80004D0C3 /* LoginInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE33EF261816C80004D0C3 /* LoginInputModel.swift */; };
+		04FE33F42618174E0004D0C3 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE33F32618174E0004D0C3 /* ApiService.swift */; };
+		04FE33F8261817950004D0C3 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE33F7261817950004D0C3 /* LoginController.swift */; };
+		04FE33FB261817B60004D0C3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE33FA261817B60004D0C3 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +33,15 @@
 		04DFB5C32616B92700B68735 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DFB5C52616B92700B68735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DFB5D02616B9EE00B68735 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		04DFB5D32616BB5300B68735 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		04FE33E52616DEAE0004D0C3 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		04FE33EC261815B90004D0C3 /* PelajaranView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelajaranView.swift; sourceTree = "<group>"; };
+		04FE33EF261816C80004D0C3 /* LoginInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputModel.swift; sourceTree = "<group>"; };
+		04FE33F32618174E0004D0C3 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		04FE33F7261817950004D0C3 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		04FE33FA261817B60004D0C3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		548EE7417CB2CE750430C3D0 /* Pods-SiswaAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiswaAPP.debug.xcconfig"; path = "Target Support Files/Pods-SiswaAPP/Pods-SiswaAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		7C79EBC3A7B536785DBEE4E7 /* Pods-SiswaAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiswaAPP.release.xcconfig"; path = "Target Support Files/Pods-SiswaAPP/Pods-SiswaAPP.release.xcconfig"; sourceTree = "<group>"; };
+		B617A8B32463393FDEDC1517 /* Pods_SiswaAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SiswaAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01BA8AC39B37171B622D0874 /* Pods_SiswaAPP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +61,8 @@
 			children = (
 				04DFB5B62616B92300B68735 /* SiswaAPP */,
 				04DFB5B52616B92300B68735 /* Products */,
+				23DE724F028920CE6FD7A32D /* Pods */,
+				9823613CAE7BE3C16DA2C391 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				04DFB5CC2616B97900B68735 /* Resources */,
+				04FE33F2261817330004D0C3 /* Services */,
+				04FE33F62618176D0004D0C3 /* Controllers */,
 				04DFB5CE2616B98F00B68735 /* Models */,
 				04DFB5CD2616B98600B68735 /* Views */,
 				04DFB5BD2616B92700B68735 /* Assets.xcassets */,
@@ -84,6 +103,7 @@
 			children = (
 				04DFB5B72616B92300B68735 /* AppDelegate.swift */,
 				04DFB5B92616B92300B68735 /* SceneDelegate.swift */,
+				04FE33FA261817B60004D0C3 /* Constant.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -93,6 +113,7 @@
 			children = (
 				04DFB5BB2616B92300B68735 /* ContentView.swift */,
 				04DFB5D02616B9EE00B68735 /* LoginView.swift */,
+				04FE33EC261815B90004D0C3 /* PelajaranView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -100,9 +121,43 @@
 		04DFB5CE2616B98F00B68735 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				04DFB5D32616BB5300B68735 /* AuthModel.swift */,
+				04FE33E52616DEAE0004D0C3 /* LoginModel.swift */,
+				04FE33EF261816C80004D0C3 /* LoginInputModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		04FE33F2261817330004D0C3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04FE33F32618174E0004D0C3 /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		04FE33F62618176D0004D0C3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04FE33F7261817950004D0C3 /* LoginController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		23DE724F028920CE6FD7A32D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				548EE7417CB2CE750430C3D0 /* Pods-SiswaAPP.debug.xcconfig */,
+				7C79EBC3A7B536785DBEE4E7 /* Pods-SiswaAPP.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9823613CAE7BE3C16DA2C391 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B617A8B32463393FDEDC1517 /* Pods_SiswaAPP.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,9 +167,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DFB5C82616B92700B68735 /* Build configuration list for PBXNativeTarget "SiswaAPP" */;
 			buildPhases = (
+				16A100B9A173EC36538D7EAE /* [CP] Check Pods Manifest.lock */,
 				04DFB5B02616B92300B68735 /* Sources */,
 				04DFB5B12616B92300B68735 /* Frameworks */,
 				04DFB5B22616B92300B68735 /* Resources */,
+				77D5F273A06017155DC92A3E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -170,16 +227,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16A100B9A173EC36538D7EAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SiswaAPP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77D5F273A06017155DC92A3E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SiswaAPP/Pods-SiswaAPP-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SiswaAPP/Pods-SiswaAPP-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SiswaAPP/Pods-SiswaAPP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04DFB5B02616B92300B68735 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */,
+				04FE33ED261815BA0004D0C3 /* PelajaranView.swift in Sources */,
+				04FE33F0261816C80004D0C3 /* LoginInputModel.swift in Sources */,
+				04FE33E62616DEAE0004D0C3 /* LoginModel.swift in Sources */,
 				04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */,
+				04FE33F42618174E0004D0C3 /* ApiService.swift in Sources */,
 				04DFB5D12616B9EE00B68735 /* LoginView.swift in Sources */,
 				04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */,
-				04DFB5D42616BB5300B68735 /* AuthModel.swift in Sources */,
+				04FE33FB261817B60004D0C3 /* Constant.swift in Sources */,
+				04FE33F8261817950004D0C3 /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +419,7 @@
 		};
 		04DFB5C92616B92700B68735 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 548EE7417CB2CE750430C3D0 /* Pods-SiswaAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -336,6 +441,7 @@
 		};
 		04DFB5CA2616B92700B68735 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C79EBC3A7B536785DBEE4E7 /* Pods-SiswaAPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
