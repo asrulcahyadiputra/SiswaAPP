@@ -34,7 +34,7 @@ struct HeaderView: View {
                 .resizable()
                 .cornerRadius(20)
                 .frame(height:((UIScreen.main.bounds.width - 60) * 9) / 16)
-                .padding(.top,100)
+                .padding(.top,70)
         }
         .padding(.top,50)
         .padding(.horizontal,30)

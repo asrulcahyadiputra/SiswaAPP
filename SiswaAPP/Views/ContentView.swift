@@ -15,18 +15,14 @@ struct ContentView: View {
     
     var body: some View {
         
-        if(!authUser.isLogin){
-            LoginView()
-        }else{
-            ZStack(alignment: Alignment.top){
-              
-                HeaderView()
-                PelajaranView()
-               
-            }
-            .background(Color("primary-bg"))
-            .ignoresSafeArea(.all)
+        ZStack(alignment: Alignment.top){
+            HeaderView()
+            PelajaranView()
+            TabBarView()
+                .padding(.bottom,30)
         }
+        .background(Color("primary-bg"))
+        .ignoresSafeArea(.all)
        
     }
 }
@@ -37,19 +33,4 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct Course: Identifiable {
-    var id = UUID()
-    var title: String
-    var icon : String
-    var date : String
-    var iconColor: String
-    var cardColor: String
-}
 
-var Cdata = [
-    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light"),
-    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light"),
-    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light"),
-    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light"),
-    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light")
-]
