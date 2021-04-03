@@ -27,7 +27,14 @@ class LoginController: ObservableObject {
     func cekLogin(username:String, password: String) {
         let Login = LoginInputModel(nik: username, password: password)
          
-         ApiService.shareInstance.callingLoginApi(login: Login)
+        ApiService.shareInstance.callingLoginApi(login: Login) { (isSuccess, str) in
+            if isSuccess {
+                self.isLogin = true
+            }else{
+                self.isCorrect = false
+                self.isLogin = false
+            }
+        }
     }
         
 }

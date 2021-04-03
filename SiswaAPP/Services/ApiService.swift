@@ -10,9 +10,10 @@ import Alamofire
 
 
 class ApiService{
+    
     static let shareInstance = ApiService()
     
-    func callingLoginApi(login: LoginInputModel) {
+    func callingLoginApi(login: LoginInputModel, completionHandler: @escaping (Bool, String) -> ()) {
         AF.request(login_url, method: .post, parameters: login , encoder: JSONParameterEncoder.default).response{
             response in
             debugPrint(response)
@@ -21,8 +22,15 @@ class ApiService{
                 do{
                     let json = try JSONSerialization.jsonObject(with: data!, options: [])
                     print(json)
-                }catch {
+                    if(response.response?.statusCode == 200){
+                        completionHandler(true,"Login Successfully")
+                    }else{
+                        completionHandler(false,"Login Failed")
+                    }
                     
+                }catch {
+                    print(error.localizedDescription)
+                    completionHandler(false,"Something Went Wrong")
                 }
             case .failure(let err):
                 print(err.localizedDescription)
