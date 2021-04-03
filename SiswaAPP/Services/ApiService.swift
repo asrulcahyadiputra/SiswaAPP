@@ -9,31 +9,38 @@ import Foundation
 import Alamofire
 
 
+enum APIErrors: Error {
+    case custom(message: String)
+}
+
+typealias Handler = (Swift.Result<Any?, APIErrors>) -> Void
+
 class ApiService{
     
     static let shareInstance = ApiService()
     
-    func callingLoginApi(login: LoginInputModel, completionHandler: @escaping (Bool, String) -> ()) {
-        AF.request(login_url, method: .post, parameters: login , encoder: JSONParameterEncoder.default).response{
+    func callingLoginApi(login: LoginInputModel,completionHandler: @escaping Handler) {
+        
+        AF.request(login_url, method: .post, parameters: login , encoder: JSONParameterEncoder.default).response {
             response in
-            debugPrint(response)
             switch response.result {
             case .success(let data):
                 do{
-                    let json = try JSONSerialization.jsonObject(with: data!, options: [])
-                    print(json)
+                    
+                    let json = try JSONDecoder().decode(ResponseLogin.self, from: data!)
+                
                     if(response.response?.statusCode == 200){
-                        completionHandler(true,"Login Successfully")
+                        completionHandler(.success(json))
                     }else{
-                        completionHandler(false,"Login Failed")
+                        completionHandler(.failure(.custom(message: "Please Check Your network connectivity")))
                     }
                     
                 }catch {
-                    print(error.localizedDescription)
-                    completionHandler(false,"Something Went Wrong")
+                    completionHandler(.failure(.custom(message: "Please try again")))
                 }
             case .failure(let err):
                 print(err.localizedDescription)
+                completionHandler(.failure(.custom(message: "Please try again")))
             }
         }
         

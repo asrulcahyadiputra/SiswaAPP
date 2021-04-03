@@ -8,9 +8,9 @@
 import Foundation
 import Combine
 import SwiftUI
-import Alamofire
 
 class LoginController: ObservableObject {
+    
     //didChange
     var didChange = PassthroughSubject<LoginController, Never>()
     
@@ -27,12 +27,26 @@ class LoginController: ObservableObject {
     func cekLogin(username:String, password: String) {
         let Login = LoginInputModel(nik: username, password: password)
          
-        ApiService.shareInstance.callingLoginApi(login: Login) { (isSuccess, str) in
-            if isSuccess {
-                self.isLogin = true
-            }else{
+        ApiService.shareInstance.callingLoginApi(login: Login) { (result) in
+            switch result {
+            case .success(let json):
+                let token = (json as! ResponseLogin).token
+                let message = (json as! ResponseLogin).message
+                
+                if(message == "success"){
+                    self.isLogin = true
+                    self.userToken = token
+                }else{
+                    self.isCorrect = false
+                    self.isLogin = false
+                    self.userToken = ""
+                }
+                
+            case .failure(let err):
                 self.isCorrect = false
                 self.isLogin = false
+                self.userToken = ""
+                print(err.localizedDescription)
             }
         }
     }
