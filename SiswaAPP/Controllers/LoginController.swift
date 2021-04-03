@@ -23,6 +23,7 @@ class LoginController: ObservableObject {
     @Published var isCorrect : Bool = true
     
     @Published var userToken : String = ""
+    @Published var kodeKelas : String = ""
     
     func cekLogin(username:String, password: String) {
         let Login = LoginInputModel(nik: username, password: password)
@@ -36,6 +37,19 @@ class LoginController: ObservableObject {
                 if(message == "success"){
                     self.isLogin = true
                     self.userToken = token
+                    
+                    ApiService.shareInstance.callingProfileApi(token: token) { (response) in
+                        switch response {
+                        case .success(let data):
+                            let userProfile = (data as! Profile).user
+                            let kodeKelas = userProfile[0].kodeKelas
+                            self.kodeKelas = kodeKelas
+                        case .failure(let err):
+                            print("Error")
+                            print(err.localizedDescription)
+                        }
+                        
+                    }
                 }else{
                     self.isCorrect = false
                     self.isLogin = false
