@@ -8,33 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var row = Array(repeating: GridItem(.fixed(220), spacing: 20), count: 1)
+    
     @EnvironmentObject var authUser : LoginController
     
-    func logout(){
-        authUser.isLogin = false
-    }
     var body: some View {
+        
         if(!authUser.isLogin){
             LoginView()
         }else{
-            Text("Hello, world!")
-                .padding()
-            
-            VStack{
-                HStack {
-                    Spacer()
-                    Button( action: {
-                        //action button here
-                        self.logout()
-                    }){
-                        Text("Logout").bold().font(.callout).foregroundColor(.white)
-                    }
-                    Spacer()
-                }
-                .padding()
-                .background(Color.purple)
-                .cornerRadius(15.0)
+            ZStack(alignment: Alignment.top){
+              
+                HeaderView()
+                PelajaranView()
+               
             }
+            .background(Color("primary-bg"))
+            .ignoresSafeArea(.all)
         }
        
     }
@@ -45,3 +36,20 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct Course: Identifiable {
+    var id = UUID()
+    var title: String
+    var icon : String
+    var date : String
+    var iconColor: String
+    var cardColor: String
+}
+
+var Cdata = [
+    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light"),
+    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light"),
+    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light"),
+    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light"),
+    Course(title:"UI/UX", icon: "diagram", date: "10.00 am", iconColor: "green-icon", cardColor: "green-light")
+]

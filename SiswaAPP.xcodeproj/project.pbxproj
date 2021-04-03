@@ -23,6 +23,8 @@
 		04FE33FB261817B60004D0C3 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE33FA261817B60004D0C3 /* Constant.swift */; };
 		04FE3400261833C00004D0C3 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE33FF261833C00004D0C3 /* ProfileModel.swift */; };
 		04FE3403261841820004D0C3 /* MapelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE3402261841820004D0C3 /* MapelModel.swift */; };
+		04FE3406261853FE0004D0C3 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE3405261853FE0004D0C3 /* BottomSheetView.swift */; };
+		04FE340A26186A7E0004D0C3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FE340926186A7E0004D0C3 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		04FE33FA261817B60004D0C3 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		04FE33FF261833C00004D0C3 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		04FE3402261841820004D0C3 /* MapelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapelModel.swift; sourceTree = "<group>"; };
+		04FE3405261853FE0004D0C3 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		04FE340926186A7E0004D0C3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		548EE7417CB2CE750430C3D0 /* Pods-SiswaAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiswaAPP.debug.xcconfig"; path = "Target Support Files/Pods-SiswaAPP/Pods-SiswaAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		7C79EBC3A7B536785DBEE4E7 /* Pods-SiswaAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SiswaAPP.release.xcconfig"; path = "Target Support Files/Pods-SiswaAPP/Pods-SiswaAPP.release.xcconfig"; sourceTree = "<group>"; };
 		B617A8B32463393FDEDC1517 /* Pods_SiswaAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SiswaAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,7 @@
 		04DFB5CD2616B98600B68735 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04FE340826186A650004D0C3 /* Core */,
 				04DFB5BB2616B92300B68735 /* ContentView.swift */,
 				04DFB5D02616B9EE00B68735 /* LoginView.swift */,
 				04FE33EC261815B90004D0C3 /* PelajaranView.swift */,
@@ -147,6 +152,15 @@
 				04FE33F7261817950004D0C3 /* LoginController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04FE340826186A650004D0C3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				04FE3405261853FE0004D0C3 /* BottomSheetView.swift */,
+				04FE340926186A7E0004D0C3 /* HeaderView.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		23DE724F028920CE6FD7A32D /* Pods */ = {
@@ -282,6 +296,7 @@
 			files = (
 				04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */,
 				04FE33ED261815BA0004D0C3 /* PelajaranView.swift in Sources */,
+				04FE3406261853FE0004D0C3 /* BottomSheetView.swift in Sources */,
 				04FE33F0261816C80004D0C3 /* LoginInputModel.swift in Sources */,
 				04FE3403261841820004D0C3 /* MapelModel.swift in Sources */,
 				04FE3400261833C00004D0C3 /* ProfileModel.swift in Sources */,
@@ -292,6 +307,7 @@
 				04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */,
 				04FE33FB261817B60004D0C3 /* Constant.swift in Sources */,
 				04FE33F8261817950004D0C3 /* LoginController.swift in Sources */,
+				04FE340A26186A7E0004D0C3 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
