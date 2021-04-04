@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import SwiftUI
+import SwiftKeychainWrapper
 
 class LoginController: ObservableObject {
     
@@ -21,14 +22,13 @@ class LoginController: ObservableObject {
     }
     
     @Published var isCorrect : Bool = true
-    
     @Published var userToken : String = ""
     @Published var kodeKelas : String = ""
     @Published var name : String = ""
     
     func cekLogin(username:String, password: String) {
         let Login = LoginInputModel(nik: username, password: password)
-         
+        
         ApiService.shareInstance.callingLoginApi(login: Login) { (result) in
             switch result {
             case .success(let json):
@@ -44,9 +44,14 @@ class LoginController: ObservableObject {
                             let userProfile = (data as! Profile).user
                             let kodeKelas = userProfile[0].kodeKelas
                             let name = userProfile[0].nama
-                          
+                            
                             self.kodeKelas = kodeKelas
                             self.name = name
+                            
+                            //store keychain
+                            KeychainWrapper.standard.set(token, forKey: "userToken")
+                            KeychainWrapper.standard.set(kodeKelas, forKey: "kodeKelas")
+                            
                         case .failure(let err):
                             print("Error")
                             print(err.localizedDescription)
@@ -67,5 +72,5 @@ class LoginController: ObservableObject {
             }
         }
     }
-        
+    
 }

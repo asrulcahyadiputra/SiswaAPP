@@ -26,8 +26,6 @@ struct ContentView: View {
             .background(Color("primary-bg"))
             .ignoresSafeArea(.all)
         }
-       
-       
     }
 }
 

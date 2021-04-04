@@ -9,19 +9,20 @@ import Foundation
 
 
 // MARK: - root
-struct Results: Codable {
+struct Results: Decodable{
     let success: Mapels
 }
 
 // MARK: - Success
-struct Mapels: Codable {
+struct Mapels: Decodable{
     let status: Bool
     let data: [Mapel]
     let message: String
 }
 
 // MARK: - Datum
-struct Mapel: Codable {
+struct Mapel: Decodable, Identifiable {
+    var id = UUID()
     let kodeMatpel, nama, singkatan: String
 
     enum CodingKeys: String, CodingKey {

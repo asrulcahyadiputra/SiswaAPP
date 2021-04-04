@@ -6,23 +6,26 @@
 //
 
 import SwiftUI
+import Alamofire
+
 
 struct PelajaranView: View {
     
-    @EnvironmentObject var authUser : LoginController
+   @EnvironmentObject var authUser : LoginController
     
-    @ObservedObject var mapelController = MapelController()
+   @ObservedObject var mp = MapelController()
     
     var body: some View {
         
         BottomSheet {
             VStack() {
                 Spacer()
-                VStack(spacing: 18){
+                VStack(spacing: 20){
                     Capsule()
                         .fill(Color.gray)
                         .frame(width: 60, height: 4)
                     HStack{
+                     
                         Text("Mata Pelajaran Kelas " + authUser.kodeKelas)
                             .foregroundColor(.gray)
                         Spacer()
@@ -32,20 +35,30 @@ struct PelajaranView: View {
                     ScrollView(.vertical, showsIndicators: false, content:{
                         VStack(spacing: 10){
                             ScrollView {
-                                LazyVStack(alignment: .leading, spacing: 30){
-                                    ForEach(0..<10){ num in
-                                        Text("Successfully")
+                                LazyVGrid(columns: [
+                                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
+                                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
+                                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
+                                ], spacing: 12, content: {
+                                    ForEach(mp.mapels){ ls in
+                                        VStack(alignment: .leading){
+                                            Spacer()
+                                                .frame(width: 100, height: 100)
+                                                .background(Color.blue)
+                                            
+                                            Text(ls.singkatan)
+                                                .font(.system(size:10, weight: .semibold))
+                                        }
+                                        .padding(.horizontal)
                                     }
-                                    .onAppear {
-                                        mapelController.loadMapel(kode: authUser.kodeKelas, token: authUser.userToken)
-                                    }
-                                }
+                                })
+                                .padding(.horizontal,12)
+                                
                             }
                         }
                         .padding(.horizontal)
                         .padding(.top,10)
                         .padding(.bottom)
-                        
                     })
                 }
             }

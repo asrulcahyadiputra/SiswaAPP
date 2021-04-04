@@ -78,21 +78,19 @@ class ApiService{
         
     }
     
-    func callingMapelApi(token: String, kodeKelas: String, completionHandler: @escaping Handler) {
-        
+    func callingMapelApi(completionHandler: @escaping Handler) {
+
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer " + token,
+            "Authorization": "Bearer " + userToken!,
         ]
         
         let parameters : Parameters = [
-            "kode_kelas" : kodeKelas
+            "kode_kelas" : kodeKelas!
         ]
-        
-        
         
         AF.request(mapel_url, method: .get,parameters: parameters ,encoding: URLEncoding.queryString, headers: headers ).response {
             response in
-            debugPrint(response)
+         
             
             switch response.result {
             case .success(let data):

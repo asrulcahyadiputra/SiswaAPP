@@ -6,6 +6,15 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
+
+
+
+
+//Storage
+let userToken = KeychainWrapper.standard.string(forKey: "userToken")
+let kodeKelas = KeychainWrapper.standard.string(forKey: "kodeKelas")
+
 
 
 let app_id = ""

@@ -11,26 +11,23 @@ import Combine
 
 
 class MapelController: ObservableObject{
+    @Published var mapels = [Mapel]()
     
-    @Published var mapels : [Mapels] = []
-    
-    func loadMapel( kode: String,token: String) {
-      
-            ApiService.shareInstance.callingMapelApi(token: token, kodeKelas: kode) { (response) in
-                switch response {
-                case .success(let data):
-                    let results = (data as! Results).success
-                    
-                    self.mapels = [results]
-                    
-//                    print(results)
-                  
-                   
-                case .failure(let err):
-                    print("Error")
-                    print(err.localizedDescription)
-                }
+    init() {
+        ApiService.shareInstance.callingMapelApi() { (response) in
+            switch response {
+            case .success(let data):
+             
+                let results = (data as! Results)
                 
+                self.mapels = results.success.data
+                
+           
+            case .failure(let err):
+                print("Error")
+                print(err.localizedDescription)
             }
+            
+        }
     }
 }
