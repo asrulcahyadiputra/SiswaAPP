@@ -9,9 +9,9 @@ import SwiftUI
 
 struct PelajaranView: View {
     
-   @EnvironmentObject var authUser : LoginController
+    @EnvironmentObject var authUser : LoginController
     
-   @ObservedObject var mapelController = MapelController()
+    @ObservedObject var mapelController = MapelController()
     
     var body: some View {
         
@@ -23,7 +23,7 @@ struct PelajaranView: View {
                         .fill(Color.gray)
                         .frame(width: 60, height: 4)
                     HStack{
-                        Text("Mata Pelajaran")
+                        Text("Mata Pelajaran Kelas " + authUser.kodeKelas)
                             .foregroundColor(.gray)
                         Spacer()
                         
@@ -33,8 +33,11 @@ struct PelajaranView: View {
                         VStack(spacing: 10){
                             ScrollView {
                                 LazyVStack(alignment: .leading, spacing: 30){
-                                    ForEach(mapelController.mapels, id: \.self){ num in
+                                    ForEach(0..<10){ num in
                                         Text("Successfully")
+                                    }
+                                    .onAppear {
+                                        mapelController.loadMapel(kode: authUser.kodeKelas, token: authUser.userToken)
                                     }
                                 }
                             }

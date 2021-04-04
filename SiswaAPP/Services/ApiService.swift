@@ -28,7 +28,7 @@ class ApiService{
                 do{
                     
                     let json = try JSONDecoder().decode(ResponseLogin.self, from: data!)
-                
+                    
                     if(response.response?.statusCode == 200){
                         completionHandler(.success(json))
                     }else{
@@ -53,17 +53,17 @@ class ApiService{
         
         AF.request(profile_url, method: .get, headers: headers ).response {
             response in
-          
+            
             switch response.result {
             case .success(let data):
                 do{
                     
                     let json = try JSONDecoder().decode(Profile.self, from: data!)
-                  
+                    
                     if(response.response?.statusCode == 200){
                         completionHandler(.success(json))
                     }else{
-                      
+                        
                         completionHandler(.failure(.custom(message: "Please Check Your network connectivity")))
                     }
                     
@@ -78,40 +78,43 @@ class ApiService{
         
     }
     
-    func callingMapelApi(token: String,kodeKelas: String,completionHandler: @escaping Handler) {
+    func callingMapelApi(token: String, kodeKelas: String, completionHandler: @escaping Handler) {
+        
         let headers: HTTPHeaders = [
             "Authorization": "Bearer " + token,
         ]
         
-     
-            AF.request(profile_url + "?kode_kelas=" + kodeKelas , method: .get, headers: headers ).response {
-                response in
-                debugPrint(response)
-                switch response.result {
-                case .success(let data):
-                    do{
+        let parameters : Parameters = [
+            "kode_kelas" : kodeKelas
+        ]
+        
+        
+        
+        AF.request(mapel_url, method: .get,parameters: parameters ,encoding: URLEncoding.queryString, headers: headers ).response {
+            response in
+            debugPrint(response)
+            
+            switch response.result {
+            case .success(let data):
+                do{
+                    
+                    let json = try JSONDecoder().decode(Results.self, from: data!)
+                    
+                    if(response.response?.statusCode == 200){
+                        completionHandler(.success(json))
+                    }else{
                         
-                        let json = try JSONDecoder().decode(Results.self, from: data!)
-                      
-                        if(response.response?.statusCode == 200){
-                            completionHandler(.success(json))
-                        }else{
-                          
-                            completionHandler(.failure(.custom(message: "Please Check Your network connectivity")))
-                        }
-                        
-                    }catch {
-                        completionHandler(.failure(.custom(message: "Please try again")))
+                        completionHandler(.failure(.custom(message: "Please Check Your network connectivity")))
                     }
-                case .failure(let err):
-                    print(err.localizedDescription)
+                    
+                }catch {
                     completionHandler(.failure(.custom(message: "Please try again")))
                 }
+            case .failure(let err):
+                print(err.localizedDescription)
+                completionHandler(.failure(.custom(message: "Please try again")))
             }
-     
-        
-        
-        
+        }
     }
     
 }

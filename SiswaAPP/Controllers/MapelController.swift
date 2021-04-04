@@ -12,13 +12,25 @@ import Combine
 
 class MapelController: ObservableObject{
     
-    @EnvironmentObject var authUser : LoginController
+    @Published var mapels : [Mapels] = []
     
-    @Published var mapels = 0..<10
-    
-    init() {
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: false){ [self] (_) in
-            
-        }
+    func loadMapel( kode: String,token: String) {
+      
+            ApiService.shareInstance.callingMapelApi(token: token, kodeKelas: kode) { (response) in
+                switch response {
+                case .success(let data):
+                    let results = (data as! Results).success
+                    
+                    self.mapels = [results]
+                    
+//                    print(results)
+                  
+                   
+                case .failure(let err):
+                    print("Error")
+                    print(err.localizedDescription)
+                }
+                
+            }
     }
 }

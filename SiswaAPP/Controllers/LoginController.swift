@@ -38,15 +38,13 @@ class LoginController: ObservableObject {
                 if(message == "success"){
                     self.isLogin = true
                     self.userToken = token
-                    print(token)
                     ApiService.shareInstance.callingProfileApi(token: token) { (response) in
                         switch response {
                         case .success(let data):
                             let userProfile = (data as! Profile).user
                             let kodeKelas = userProfile[0].kodeKelas
                             let name = userProfile[0].nama
-                            print(name)
-                            print(kodeKelas)
+                          
                             self.kodeKelas = kodeKelas
                             self.name = name
                         case .failure(let err):
