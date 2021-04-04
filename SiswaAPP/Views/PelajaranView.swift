@@ -45,12 +45,12 @@ struct PelajaranView: View {
                         .padding(.horizontal)
                         .padding(.top,10)
                         .padding(.bottom)
-                       
+                        
                     })
                 }
             }
         }
-       
+        
     }
 }
 
