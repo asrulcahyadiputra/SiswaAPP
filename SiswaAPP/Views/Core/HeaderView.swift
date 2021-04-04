@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @EnvironmentObject var authUser : LoginController
     var body: some View {
         VStack{
             HStack{
@@ -15,7 +16,7 @@ struct HeaderView: View {
                     .frame(width: 30, height: 30)
                     .foregroundColor(.white)
                     .overlay(Image("user").resizable())
-                Text("John Doe")
+                Text(authUser.name)
                     .font(.title3)
                     .fontWeight(.bold)
                     .foregroundColor(.white)

@@ -9,13 +9,12 @@ import SwiftUI
 
 struct PelajaranView: View {
     
-    @EnvironmentObject var authUser : LoginController
+   @EnvironmentObject var authUser : LoginController
     
-//    func logout(){
-//        authUser.isLogin = false
-//    }
+   @ObservedObject var mapelController = MapelController()
     
     var body: some View {
+        
         BottomSheet {
             VStack() {
                 Spacer()
@@ -32,7 +31,13 @@ struct PelajaranView: View {
                     .padding()
                     ScrollView(.vertical, showsIndicators: false, content:{
                         VStack(spacing: 10){
-                            Text("Hello World")
+                            ScrollView {
+                                LazyVStack(alignment: .leading, spacing: 30){
+                                    ForEach(mapelController.mapels, id: \.self){ num in
+                                        Text("Successfully")
+                                    }
+                                }
+                            }
                         }
                         .padding(.horizontal)
                         .padding(.top,10)
@@ -51,3 +56,18 @@ struct PelajaranView_Previews: PreviewProvider {
         PelajaranView()
     }
 }
+
+struct CList : Identifiable {
+    var id = UUID()
+    var name: String
+    var icon: String
+    var iconColor: String
+}
+
+var lData = [
+    CList(name: "Mapel 1", icon: "diagram", iconColor: "green-icon"),
+    CList(name: "Mapel 2", icon: "diagram", iconColor: "green-icon"),
+    CList(name: "Mapel 3", icon: "diagram", iconColor: "green-icon"),
+    CList(name: "Mapel 4", icon: "diagram", iconColor: "green-icon"),
+    CList(name: "Mapel 5", icon: "diagram", iconColor: "green-icon"),
+]

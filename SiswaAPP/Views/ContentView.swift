@@ -14,15 +14,19 @@ struct ContentView: View {
     @EnvironmentObject var authUser : LoginController
     
     var body: some View {
-        
-        ZStack(alignment: Alignment.top){
-            HeaderView()
-            PelajaranView()
-            TabBarView()
-                .padding(.bottom,30)
+        if(!authUser.isLogin){
+            LoginView()
+        }else{
+            ZStack(alignment: Alignment.top){
+                HeaderView()
+                PelajaranView()
+//                TabBarView()
+//                    .padding(.bottom,30)
+            }
+            .background(Color("primary-bg"))
+            .ignoresSafeArea(.all)
         }
-        .background(Color("primary-bg"))
-        .ignoresSafeArea(.all)
+       
        
     }
 }
