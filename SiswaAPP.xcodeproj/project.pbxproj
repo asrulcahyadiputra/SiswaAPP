@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		01BA8AC39B37171B622D0874 /* Pods_SiswaAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B617A8B32463393FDEDC1517 /* Pods_SiswaAPP.framework */; };
 		0417A5222619700C0053F3E2 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5212619700C0053F3E2 /* BlurView.swift */; };
-		0417A5252619714B0053F3E2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5242619714B0053F3E2 /* CardView.swift */; };
 		0417A5282619A44E0053F3E2 /* MapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5272619A44D0053F3E2 /* MapelController.swift */; };
+		04604AB0261AE1E100AD6FE6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04604AAF261AE1E100AD6FE6 /* HomeView.swift */; };
 		04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B72616B92300B68735 /* AppDelegate.swift */; };
 		04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B92616B92300B68735 /* SceneDelegate.swift */; };
 		04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5BB2616B92300B68735 /* ContentView.swift */; };
@@ -34,8 +34,8 @@
 
 /* Begin PBXFileReference section */
 		0417A5212619700C0053F3E2 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		0417A5242619714B0053F3E2 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		0417A5272619A44D0053F3E2 /* MapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapelController.swift; sourceTree = "<group>"; };
+		04604AAF261AE1E100AD6FE6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		04DFB5B42616B92300B68735 /* SiswaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiswaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DFB5B72616B92300B68735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DFB5B92616B92300B68735 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +134,7 @@
 				04DFB5D02616B9EE00B68735 /* LoginView.swift */,
 				04FE33EC261815B90004D0C3 /* PelajaranView.swift */,
 				04FE34112618AA3B0004D0C3 /* PesanView.swift */,
+				04604AAF261AE1E100AD6FE6 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,7 +174,6 @@
 				04FE340926186A7E0004D0C3 /* HeaderView.swift */,
 				04FE340E2618A3000004D0C3 /* TabBarView.swift */,
 				0417A5212619700C0053F3E2 /* BlurView.swift */,
-				0417A5242619714B0053F3E2 /* CardView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -320,8 +320,8 @@
 				04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */,
 				04FE33F42618174E0004D0C3 /* ApiService.swift in Sources */,
 				04DFB5D12616B9EE00B68735 /* LoginView.swift in Sources */,
-				0417A5252619714B0053F3E2 /* CardView.swift in Sources */,
 				04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */,
+				04604AB0261AE1E100AD6FE6 /* HomeView.swift in Sources */,
 				04FE33FB261817B60004D0C3 /* Constant.swift in Sources */,
 				04FE34122618AA3D0004D0C3 /* PesanView.swift in Sources */,
 				0417A5222619700C0053F3E2 /* BlurView.swift in Sources */,

@@ -10,33 +10,32 @@ import SwiftUI
 struct HeaderView: View {
     @EnvironmentObject var authUser : LoginController
     var body: some View {
-        VStack{
-            HStack{
-                RoundedRectangle(cornerRadius: 50)
-                    .frame(width: 30, height: 30)
-                    .foregroundColor(.white)
-                    .overlay(Image("user").resizable())
-                Text(authUser.name)
-                    .font(.title3)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-
-                Spacer()
-
-                Button(action: {}){
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .frame(width: 25, height: 25)
+        ZStack{
+            VStack{
+                HStack{
+                    RoundedRectangle(cornerRadius: 50)
+                        .frame(width: 30, height: 30)
                         .foregroundColor(.white)
+                        .overlay(Image("user").resizable())
+                    Text(authUser.name)
+                        .font(.title3)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                    Button(action: {}){
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.white)
+                    }
                 }
             }
-
-            Image("eLearning")
-                .resizable()
-                .cornerRadius(20)
-                .frame(height:((UIScreen.main.bounds.width - 60) * 9) / 16)
-                .padding(.top,70)
         }
+        
+        .background(Color("primary-bg"))
+        .ignoresSafeArea(.all)
         .padding(.top,50)
         .padding(.horizontal,30)
     }
