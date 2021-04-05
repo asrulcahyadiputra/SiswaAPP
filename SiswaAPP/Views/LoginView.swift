@@ -32,29 +32,44 @@ struct Login : View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                HStack {
+                VStack{
+                    Spacer()
                     HStack {
-                        VStack {
-                            Text("Hi!").font(.largeTitle).foregroundColor(Color.white)
-                            Text("Welcome Back!").font(.title).foregroundColor(Color.white)
+                        VStack(alignment:.leading) {
+                            HStack{
+                                Image("logo")
+                                    .resizable()
+                                    .frame(width: 34, height: 34)
+                                    .padding()
+                            }
+                        }
+                        .padding(.top,30)
+                        Spacer()
+                    }
+                    VStack{
+                        Image("hero-login-1")
+                            .resizable()
+                            .frame(width: 257, height: 182)
+                            .padding()
+                        VStack{
+                            Text("Praktek membuat kita benar, pengulangan")
+                                .font(.system(size: 14)).foregroundColor(Color.white)
+                            Text("membuat kita sempurna.")
+                                .font(.system(size: 14)).foregroundColor(Color.white)
+                                
                         }
                         Spacer()
-                        
-                        Image("hero-login")
-                            .resizable()
-                            .frame(width: 120, height: 80)
-                            .padding()
                     }
-                    Spacer()
                 }
-                .frame(height:100)
-                .padding(30)
-                .background(Color.purple)
-                .clipShape(CustomShape(corner: .bottomRight, radil: 50))
+                .frame(height:400)
+                .background(Color("primary-bg"))
+                .clipShape(CustomShape(corner: .bottomRight, radil: 30))
+                .clipShape(CustomShape(corner: .bottomLeft, radil: 30))
                 .edgesIgnoringSafeArea(.top)
                 
+                
                 VStack(alignment: .leading) {
-                   
+                    
                     Text("username")
                     TextField("Useranme...", text:$username)
                         .padding()
@@ -70,6 +85,7 @@ struct Login : View {
                         .autocapitalization(.none)
                     
                     HStack {
+                        Spacer()
                         Button(action:{}){
                             Text("Lupa Password?")
                         }
@@ -88,16 +104,28 @@ struct Login : View {
                             Text("Login").bold().font(.callout).foregroundColor(.white)
                         }
                         .alert(isPresented: $showAlert) {
-                               Alert(
-                                   title: Text("Login Gagal!"),
-                                   message: Text("Username atau Password Tidak Sesuai")
-                               )
-                           }
+                            Alert(
+                                title: Text("Login Gagal!"),
+                                message: Text("Username atau Password Tidak Sesuai")
+                            )
+                        }
                         Spacer()
                     }
                     .padding()
-                    .background(Color.purple)
+                    .background(Color("primary-bg"))
                     .cornerRadius(15.0)
+                    
+                    VStack{
+                        Button(action:{}){
+                            Text("Belum Punya Akun?")
+                                .font(.system(size: 12))
+                        }
+                        
+                        Text("Hubungi pihak Sekolah untuk mendapatkan akses aplikasi")
+                            .font(.system(size: 12))
+                    }
+                    .padding()
+                    .padding(.top,30)
                 }
                 .padding(30.0)
                 Spacer()
