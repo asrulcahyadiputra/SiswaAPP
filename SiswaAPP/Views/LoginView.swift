@@ -62,7 +62,7 @@ struct Login : View {
                     }
                 }
                 .frame(height:400)
-                .background(Color("primary-bg"))
+                .background(Color("dark-blue"))
                 .clipShape(CustomShape(corner: .bottomRight, radil: 30))
                 .clipShape(CustomShape(corner: .bottomLeft, radil: 30))
                 .edgesIgnoringSafeArea(.top)
@@ -112,7 +112,7 @@ struct Login : View {
                         Spacer()
                     }
                     .padding()
-                    .background(Color("primary-bg"))
+                    .background(Color("dark-blue"))
                     .cornerRadius(15.0)
                     
                     VStack{

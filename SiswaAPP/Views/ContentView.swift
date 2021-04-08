@@ -14,17 +14,26 @@ struct ContentView: View {
     @EnvironmentObject var authUser : LoginController
     
     var body: some View {
-        HomeView()
-           
-//        if(!authUser.isLogin){
-//            LoginView()
-//        }else{
-//            ZStack(alignment: Alignment.top){
-//                HeaderView()
-//                PelajaranView()
-//            }
-//
-//        }
+        
+        if(!authUser.isLogin){
+            LoginView()
+        }else{
+            TabView{
+                HomeView()
+                    .tabItem{
+                        Label("Pelajaran", systemImage: "book")
+                    }
+                Text("Pesan")
+                    .tabItem{
+                        Label("Pesan", systemImage: "message")
+                    }
+                Text("Akun")
+                    .tabItem{
+                        Label("Akun", systemImage: "person")
+                    }
+            }
+            
+        }
     }
 }
 

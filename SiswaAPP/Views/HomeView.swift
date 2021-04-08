@@ -22,6 +22,8 @@ struct HomeView_Previews: PreviewProvider {
 
 struct Home : View {
     
+    @EnvironmentObject var userAuth : LoginController
+    
     @State var index = 0
     
     var body: some View{
@@ -62,11 +64,16 @@ struct Home : View {
                 Spacer()
                 VStack{
                     HStack{
-                        Spacer()
-                        VStack(spacing: 15) {
-                            
-                            Text("Welcome")
-                                .font(.title)
+                        HStack{
+                            VStack(alignment: .leading, spacing: 15){
+                                Text(userAuth.name)
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                Text(userAuth.kodeKelas)
+                                    .font(.system(size: 14))
+                                    .fontWeight(.bold)
+                            }
+                            .padding()
                         }
                         .foregroundColor(.black)
                         Spacer()
@@ -107,17 +114,17 @@ struct Home : View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         CardView()
-                          
+                        
                     }
                     
                     .padding(.top, 25)
-                  
-                   
+                    
+                    
                     
                 }
                 .background(Color("bg-dark"))
                 // now going to apply corner radius only to topleft so that we can acheive outline corner radius...
-//                .clipShape(Corners(corner: [.topLeft], size: CGSize(width: 70, height: 70)))
+                //                .clipShape(Corners(corner: [.topLeft], size: CGSize(width: 70, height: 70)))
             }
             Spacer()
         }
@@ -219,8 +226,8 @@ struct CardView : View {
             }
         }
         .padding(.horizontal, 25)
-       
-       
+        
+        
     }
 }
 
