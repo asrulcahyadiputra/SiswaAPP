@@ -23,7 +23,7 @@ struct HomeView_Previews: PreviewProvider {
 struct Home : View {
     
     @EnvironmentObject var userAuth : LoginController
-    
+    @ObservedObject var mp = MapelController()
     @State var index = 0
     
     var body: some View{
@@ -69,14 +69,13 @@ struct Home : View {
                                 Text(userAuth.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
-                                Text(userAuth.kodeKelas)
+                                Text("Kelas " + userAuth.kodeKelas)
                                     .font(.system(size: 14))
                                     .fontWeight(.bold)
                             }
-                            .padding()
+                            .padding(.top,15)
                         }
                         .foregroundColor(.black)
-                        Spacer()
                     }
                     .padding()
                 }
@@ -112,19 +111,38 @@ struct Home : View {
                     .padding(.top, 50)
                     .padding(.trailing)
                     
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        CardView()
-                        
-                    }
-                    
-                    .padding(.top, 25)
-                    
+                    ScrollView(.vertical, showsIndicators: false, content:{
+                        VStack(spacing: 10){
+                            ScrollView {
+                                LazyVGrid(columns: [
+                                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
+                                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
+                                    GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
+                                ], spacing: 12, content: {
+                                    ForEach(mp.mapels){ ls in
+                                        VStack(alignment: .leading){
+                                            Spacer()
+                                                .frame(width: 100, height: 100)
+                                                .background(Color.blue)
+                                            
+                                            Text(ls.singkatan)
+                                                .font(.system(size:14, weight: .semibold))
+                                        }
+                                        .padding(.horizontal)
+                                    }
+                                })
+                                .padding(.horizontal,12)
+                                
+                            }
+                        }
+                        .padding(.horizontal)
+                        .padding(.top,10)
+                        .padding(.bottom)
+                    })
                     
                     
                 }
                 .background(Color("bg-dark"))
-                // now going to apply corner radius only to topleft so that we can acheive outline corner radius...
-                //                .clipShape(Corners(corner: [.topLeft], size: CGSize(width: 70, height: 70)))
             }
             Spacer()
         }
