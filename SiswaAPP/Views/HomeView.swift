@@ -36,29 +36,29 @@ struct Home : View {
                     
                 }) {
                     
-                    Image(systemName: "circle.grid.2x2")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-                
-                Spacer()
-                
-                Button(action: {
-                    
-                }) {
-                    
                     Image("user")
                         .renderingMode(.original)
                         .resizable()
-                        .frame(width: 40, height: 40)
-                        .foregroundColor(.white)
+                        .frame(width: 50, height: 50)
                 }
+                
+                VStack(alignment:.leading){
+                    Text(userAuth.name)
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    Text("Kelas " + userAuth.kodeKelas)
+                        .font(.system(size: 14))
+                        .fontWeight(.bold)
+                }
+                
+                Spacer()
+               
+                
             }
             .padding(.horizontal)
-            .padding(.top,(UIApplication.shared.windows.first?.safeAreaInsets.top)! + 5)
+            .padding(.top,(UIApplication.shared.windows.first?.safeAreaInsets.top)! + 10)
             .padding(.bottom, 80)
-            .background(Color("dark-blue"))
-            .clipShape(Corners(corner: [.bottomRight,.bottomLeft], size: CGSize(width: 30, height: 30)))
+            .background(Color.white)
             
             HStack{
                 Spacer()
