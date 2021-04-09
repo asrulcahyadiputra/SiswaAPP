@@ -103,12 +103,10 @@ struct Home : View {
                             .font(.system(size: 20))
                         
                         Spacer()
-                        
-                        
                     }
                     .foregroundColor(.black)
                     .padding(.leading, 35)
-                    .padding(.top, 50)
+                    .padding(.top, 30)
                     .padding(.trailing)
                     
                     ScrollView(.vertical, showsIndicators: false, content:{
@@ -119,26 +117,34 @@ struct Home : View {
                                     GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
                                     GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
                                 ], spacing: 12, content: {
-                                    ForEach(mp.mapels){ ls in
-                                        VStack(alignment: .leading){
-                                            Spacer()
-                                                .frame(width: 100, height: 100)
-                                                .background(Color.blue)
-                                            
-                                            Text(ls.singkatan)
-                                                .font(.system(size:14, weight: .semibold))
+                                    //list mapel here
+                                    NavigationView{
+                                        ForEach(mp.mapels){ ls in
+                                         
+                                            VStack(alignment: .center){
+                                                Spacer()
+                                                Text(ls.singkatan)
+                                                    .font(.system(size:14, weight: .semibold))
+                                                    .foregroundColor(Color.white)
+                                                    .frame(width: 100, height: 100)
+                                                    .background(Color.blue)
+                                                    .cornerRadius(50)
+                                                    .shadow(radius: 0.3)
+                                            }
+                                            .padding(.horizontal)
                                         }
-                                        .padding(.horizontal)
                                     }
+                                  
+                                    
                                 })
                                 .padding(.horizontal,12)
-                                
                             }
                         }
                         .padding(.horizontal)
                         .padding(.top,10)
                         .padding(.bottom)
                     })
+                    .padding(.bottom,60)
                     
                     
                 }

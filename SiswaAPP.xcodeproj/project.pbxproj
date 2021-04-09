@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01BA8AC39B37171B622D0874 /* Pods_SiswaAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B617A8B32463393FDEDC1517 /* Pods_SiswaAPP.framework */; };
+		04164E78261FFFF100DBAF0E /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04164E77261FFFF100DBAF0E /* CustomCorner.swift */; };
 		0417A5222619700C0053F3E2 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5212619700C0053F3E2 /* BlurView.swift */; };
 		0417A5282619A44E0053F3E2 /* MapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5272619A44D0053F3E2 /* MapelController.swift */; };
 		04604AB0261AE1E100AD6FE6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04604AAF261AE1E100AD6FE6 /* HomeView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04164E77261FFFF100DBAF0E /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		0417A5212619700C0053F3E2 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		0417A5272619A44D0053F3E2 /* MapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapelController.swift; sourceTree = "<group>"; };
 		04604AAF261AE1E100AD6FE6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				04FE340926186A7E0004D0C3 /* HeaderView.swift */,
 				04FE340E2618A3000004D0C3 /* TabBarView.swift */,
 				0417A5212619700C0053F3E2 /* BlurView.swift */,
+				04164E77261FFFF100DBAF0E /* CustomCorner.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0417A5282619A44E0053F3E2 /* MapelController.swift in Sources */,
+				04164E78261FFFF100DBAF0E /* CustomCorner.swift in Sources */,
 				04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */,
 				04FE33ED261815BA0004D0C3 /* PelajaranView.swift in Sources */,
 				04FE3406261853FE0004D0C3 /* BottomSheetView.swift in Sources */,
