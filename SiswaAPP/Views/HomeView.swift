@@ -118,7 +118,7 @@ struct Home : View {
                                     GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
                                 ], spacing: 12, content: {
                                     //list mapel here
-                                    NavigationView{
+                                  
                                         ForEach(mp.mapels){ ls in
                                          
                                             VStack(alignment: .center){
@@ -133,7 +133,7 @@ struct Home : View {
                                             }
                                             .padding(.horizontal)
                                         }
-                                    }
+                                    
                                   
                                     
                                 })
