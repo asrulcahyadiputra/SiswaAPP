@@ -25,6 +25,7 @@ struct Home : View {
     @EnvironmentObject var userAuth : LoginController
     @ObservedObject var mp = MapelController()
     @State var index = 0
+    @State var kodeMatpel = ""
     
     var body: some View{
         NavigationView{
@@ -79,16 +80,17 @@ struct Home : View {
                                     ], spacing: 12, content: {
                                         //list mapel here
                                       
-                                        ForEach(mp.mapels){ ls in
-                                            NavigationLink( destination: PelajaranDetailView()){
+                                        ForEach(mp.mapels){ mapelItem in
+                                          
+                                            NavigationLink( destination: PelajaranDetailView(show: mapelItem)){
                                                 VStack(alignment: .center){
-                                                 
-                                                    Image(ls.kodeMatpel)
+                                                   
+                                                    Image(mapelItem.kodeMatpel)
                                                         .resizable()
                                                         .frame(width: 50, height: 50)
                                                         .shadow(radius: 0.3)
                                                         .padding()
-                                                    Text(ls.singkatan)
+                                                    Text(mapelItem.singkatan)
                                                         .font(.system(size: 14))
                                                 }
                                                 .padding(.horizontal)

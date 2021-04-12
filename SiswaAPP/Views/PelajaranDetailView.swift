@@ -9,19 +9,20 @@ import SwiftUI
 
 struct PelajaranDetailView: View {
     //    @ObservedObject var mp = MapelController()
+    let show : Mapel
     @State var selected = 0
     var body: some View {
         VStack {
             //MARK: -Header
             VStack{
                 HStack {
-                    Image("BSU")
+                    Image(show.kodeMatpel)
                         .resizable()
                         .frame(width: 70, height: 70)
                         .padding(.leading,30)
                         .padding(.trailing,10)
                     VStack(alignment: .leading, spacing:15){
-                        Text("Mandarin")
+                        Text(show.nama)
                             .font(.system(size: 18))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -29,7 +30,7 @@ struct PelajaranDetailView: View {
                             .font(.system(size: 14))
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
-                        Text("Tahun Ajaran 2020/2021")
+                        Text("")
                             .font(.system(size: 14))
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
@@ -163,8 +164,8 @@ struct GenapView: View {
     }
 }
 
-struct PelajaranDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        PelajaranDetailView()
-    }
-}
+//struct PelajaranDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PelajaranDetailView(show: Mapel)
+//    }
+//}

@@ -12,6 +12,7 @@
 		0417A5222619700C0053F3E2 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5212619700C0053F3E2 /* BlurView.swift */; };
 		0417A5282619A44E0053F3E2 /* MapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5272619A44D0053F3E2 /* MapelController.swift */; };
 		0440E86F26245D860065C40D /* PelajaranDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E86E26245D860065C40D /* PelajaranDetailView.swift */; };
+		0440E8722624EFCE0065C40D /* DetailMapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E8712624EFCE0065C40D /* DetailMapelController.swift */; };
 		04604AB0261AE1E100AD6FE6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04604AAF261AE1E100AD6FE6 /* HomeView.swift */; };
 		04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B72616B92300B68735 /* AppDelegate.swift */; };
 		04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B92616B92300B68735 /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 		0417A5212619700C0053F3E2 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		0417A5272619A44D0053F3E2 /* MapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapelController.swift; sourceTree = "<group>"; };
 		0440E86E26245D860065C40D /* PelajaranDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelajaranDetailView.swift; sourceTree = "<group>"; };
+		0440E8712624EFCE0065C40D /* DetailMapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapelController.swift; sourceTree = "<group>"; };
 		04604AAF261AE1E100AD6FE6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		04DFB5B42616B92300B68735 /* SiswaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiswaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DFB5B72616B92300B68735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				04FE33F7261817950004D0C3 /* LoginController.swift */,
 				0417A5272619A44D0053F3E2 /* MapelController.swift */,
+				0440E8712624EFCE0065C40D /* DetailMapelController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				04FE33ED261815BA0004D0C3 /* PelajaranView.swift in Sources */,
 				04FE3406261853FE0004D0C3 /* BottomSheetView.swift in Sources */,
 				0440E86F26245D860065C40D /* PelajaranDetailView.swift in Sources */,
+				0440E8722624EFCE0065C40D /* DetailMapelController.swift in Sources */,
 				04FE33F0261816C80004D0C3 /* LoginInputModel.swift in Sources */,
 				04FE3403261841820004D0C3 /* MapelModel.swift in Sources */,
 				04FE3400261833C00004D0C3 /* ProfileModel.swift in Sources */,

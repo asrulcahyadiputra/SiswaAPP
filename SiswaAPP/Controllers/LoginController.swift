@@ -41,9 +41,20 @@ class LoginController: ObservableObject {
                     ApiService.shareInstance.callingProfileApi(token: token) { (response) in
                         switch response {
                         case .success(let data):
+                           
                             let userProfile = (data as! Profile).user
                             let kodeKelas = userProfile[0].kodeKelas
                             let name = userProfile[0].nama
+                            
+                            let periodeData = (data as! Profile).periode
+                            let periode  = periodeData[0].periode
+                            
+                            let fsData = (data as! Profile).kodeFS
+                            let kodeFS = fsData[0].kodeFS
+                            
+                            let taData = (data as! Profile).kodeTa
+                            let tahuanAjaran = taData[0].kodeTa
+                            
                             
                             self.kodeKelas = kodeKelas
                             self.name = name
@@ -51,6 +62,10 @@ class LoginController: ObservableObject {
                             //store keychain
                             KeychainWrapper.standard.set(token, forKey: "userToken")
                             KeychainWrapper.standard.set(kodeKelas, forKey: "kodeKelas")
+                            KeychainWrapper.standard.set(periode, forKey: "periode")
+                            KeychainWrapper.standard.set(kodeFS, forKey: "kodeFS")
+                            KeychainWrapper.standard.set(tahuanAjaran, forKey: "tahunAjaran")
+                            
                             
                         case .failure(let err):
                             print("Error")
