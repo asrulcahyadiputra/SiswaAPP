@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct PelajaranDetailView: View {
-  
+    
     let show : Mapel
-   
+    
     @ObservedObject var detailMapel = DetailMapelController()
     @State var selected = 0
     @State var detailMatpel = [DetailMapelResponse]()
     @State var namaTa = ""
+    @State var namaGuru = ""
     var body: some View {
         VStack {
             //MARK: -Header
@@ -26,11 +27,11 @@ struct PelajaranDetailView: View {
                         .padding(.leading,30)
                         .padding(.trailing,10)
                     VStack(alignment: .leading, spacing:15){
-                        Text("")
+                        Text(show.nama)
                             .font(.system(size: 16))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                        Text("Risna Utami, S.s")
+                        Text(namaGuru)
                             .font(.system(size: 14))
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
@@ -41,17 +42,17 @@ struct PelajaranDetailView: View {
                     }
                     .onAppear {
                         ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: show.kodeMatpel) { (response) in
-                           
+                            
                             switch response {
                             case .success(let data):
-                             
-                               let results = (data as! DetailMapels).success
+                                
+                                let results = (data as! DetailMapels).success
                                 let namaTa = results.dataTa[0].nama
                                 self.namaTa = namaTa
-//                               self.detailMatpel = results
-                           
                                 
-                           
+                                let namaGuru = results.dataGuru[0].namaGuru
+                                self.namaGuru = namaGuru
+                                
                             case .failure(let err):
                                 print("Error")
                                 print(err.localizedDescription)
@@ -59,7 +60,7 @@ struct PelajaranDetailView: View {
                             
                         }
                     }
-                  
+                    
                     Spacer()
                 }
                 .padding(.top, 100)
@@ -89,13 +90,14 @@ struct PelajaranDetailView: View {
                     }
                 }
                 Spacer()
-               
+                
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)
             .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
         }
         .background(RadialGradient(gradient: Gradient(colors: [Color("gradient-blue"), Color.white]), center: .center, startRadius: 2, endRadius: 600))
+        
         .ignoresSafeArea(.all, edges: .all)
         Spacer()
         
@@ -140,7 +142,7 @@ struct TopBar: View {
         }
         .padding(.top,30)
     }
-  
+    
 }
 
 //MARK: -Kategori semeter semua
@@ -165,7 +167,7 @@ struct SemuaView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(Color.white)
                 )
-               
+                
             }
             .padding(30)
             Spacer()
