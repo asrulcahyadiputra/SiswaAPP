@@ -13,7 +13,8 @@ struct PelajaranDetailView: View {
    
     @ObservedObject var detailMapel = DetailMapelController()
     @State var selected = 0
-    @State var data = [DetailMapelResponse]()
+    @State var detailMatpel = [DetailMapelResponse]()
+    @State var namaTa = ""
     var body: some View {
         VStack {
             //MARK: -Header
@@ -33,20 +34,22 @@ struct PelajaranDetailView: View {
                             .font(.system(size: 14))
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
-                        Text("")
+                        Text(namaTa)
                             .font(.system(size: 14))
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
                     }
                     .onAppear {
                         ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: show.kodeMatpel) { (response) in
-                            debugPrint(response)
+                           
                             switch response {
                             case .success(let data):
                              
                                let results = (data as! DetailMapels).success
-                                
-                                self.data = response
+                                let namaTa = results.dataTa[0].nama
+                                self.namaTa = namaTa
+//                               self.detailMatpel = results
+                           
                                 
                            
                             case .failure(let err):

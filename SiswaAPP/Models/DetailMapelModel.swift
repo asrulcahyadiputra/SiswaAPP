@@ -45,7 +45,7 @@ struct DataGuru: Codable {
 
 // MARK: - DataTa
 struct DataTa: Codable {
-    let kodeTa, nama: String
+    var kodeTa, nama: String
 
     enum CodingKeys: String, CodingKey {
         case kodeTa = "kode_ta"
