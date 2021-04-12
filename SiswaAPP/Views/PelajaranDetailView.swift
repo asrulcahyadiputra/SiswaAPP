@@ -42,42 +42,25 @@ struct PelajaranDetailView: View {
             }
             //MARK: -Content
             ZStack{
-                
-                VStack(alignment: .leading, spacing: 20) {
-                    HStack{
-                        Text("Semester")
-                            .foregroundColor(.gray)
-                            .padding(.leading,30)
-                            .padding(.trailing,20)
-                        Button(action: {
-                            self.selected = 0
-                        }){
-                            Text("Semua")
-                                .padding(.trailing,20)
-                                .foregroundColor(self.selected == 0 ? Color("dark-blue") : .black)
+                VStack{
+                    TopBar(selected: $selected)
+                    
+                    GeometryReader{ _ in
+                        VStack{
+                            if self.selected == 0 {
+                                SemuaView()
+                            }
+                            else if self.selected == 1 {
+                                GanjilView()
+                                
+                            }
+                            else if self.selected == 2 {
+                                GenapView()
+                            }
                         }
-                        Button(action: {
-                            self.selected = 1
-                        }){
-                            Text("Ganjil")
-                                .padding(.trailing,20)
-                                .foregroundColor(self.selected == 1 ? Color("dark-blue") : .black)
-                        }
-                        
-                        Button(action: {
-                            self.selected = 2
-                        }){
-                            Text("Genap")
-                                .padding(.trailing,20)
-                                .foregroundColor(self.selected == 2 ? Color("dark-blue") : .black)
-                        }
-                        
-                        Spacer()
                     }
-                    Spacer()
                 }
-                .padding(.top,30)
-                
+               
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)
@@ -89,25 +72,66 @@ struct PelajaranDetailView: View {
         
     }
 }
+//MARK: -Top BAR
+struct TopBar: View {
+    @Binding var selected: Int
+    var body: some View{
+        VStack(alignment: .leading, spacing: 20) {
+            HStack{
+                Text("Semester")
+                    .foregroundColor(.gray)
+                    .padding(.leading,30)
+                    .padding(.trailing,20)
+                Button(action: {
+                    self.selected = 0
+                }){
+                    Text("Semua")
+                        .padding(.trailing,20)
+                        .foregroundColor(self.selected == 0 ? Color("dark-blue") : .black)
+                }
+                Button(action: {
+                    self.selected = 1
+                }){
+                    Text("Ganjil")
+                        .padding(.trailing,20)
+                        .foregroundColor(self.selected == 1 ? Color("dark-blue") : .black)
+                }
+                
+                Button(action: {
+                    self.selected = 2
+                }){
+                    Text("Genap")
+                        .padding(.trailing,20)
+                        .foregroundColor(self.selected == 2 ? Color("dark-blue") : .black)
+                }
+                
+                Spacer()
+            }
+            Spacer()
+        }
+        .padding(.top,30)
+    }
+  
+}
 
 //MARK: -Kategori semeter semua
 struct SemuaView: View {
     var body: some View{
-        Text("Hello World")
+        Text("Semua Semester")
     }
 }
 
 //MARK: -Kategori Semester Ganjil
 struct GanjilView: View {
     var body: some View{
-        Text("Hello World")
+        Text("Semester Ganjil")
     }
 }
 
 //MARK: -Kategori Semeter Genap
 struct GenapView: View {
     var body: some View{
-        Text("Hello World")
+        Text("Semester Genap")
     }
 }
 
