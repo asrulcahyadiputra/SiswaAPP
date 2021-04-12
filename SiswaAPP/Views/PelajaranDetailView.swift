@@ -8,28 +8,106 @@
 import SwiftUI
 
 struct PelajaranDetailView: View {
-//    @ObservedObject var mp = MapelController()
-  
+    //    @ObservedObject var mp = MapelController()
+    @State var selected = 0
     var body: some View {
-        VStack{
-            HStack {
-                VStack(alignment: .leading, spacing:15){
-                    Text("Hai")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Text("Selamat Pagi!")
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    
+        VStack {
+            //MARK: -Header
+            VStack{
+                HStack {
+                    Image("BSU")
+                        .resizable()
+                        .frame(width: 70, height: 70)
+                        .padding(.leading,30)
+                        .padding(.trailing,10)
+                    VStack(alignment: .leading, spacing:15){
+                        Text("Mandarin")
+                            .font(.system(size: 18))
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Text("Mandarin")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                        Text("Mandarin")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                        
+                    }
+                    Spacer()
                 }
-                Spacer()
+                .padding(.top, 100)
+                .padding(.bottom,30)
             }
-            .padding(.leading,70)
-            
+            //MARK: -Content
+            ZStack{
+                
+                VStack(alignment: .leading, spacing: 20) {
+                    HStack{
+                        Text("Semester")
+                            .foregroundColor(.gray)
+                            .padding(.leading,30)
+                            .padding(.trailing,20)
+                        Button(action: {
+                            self.selected = 0
+                        }){
+                            Text("Semua")
+                                .padding(.trailing,20)
+                                .foregroundColor(self.selected == 0 ? Color("dark-blue") : .black)
+                        }
+                        Button(action: {
+                            self.selected = 1
+                        }){
+                            Text("Ganjil")
+                                .padding(.trailing,20)
+                                .foregroundColor(self.selected == 1 ? Color("dark-blue") : .black)
+                        }
+                        
+                        Button(action: {
+                            self.selected = 2
+                        }){
+                            Text("Genap")
+                                .padding(.trailing,20)
+                                .foregroundColor(self.selected == 2 ? Color("dark-blue") : .black)
+                        }
+                        
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .padding(.top,30)
+                
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.white)
+            .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
         }
-        .background(RadialGradient(gradient: Gradient(colors: [Color("dark-blue"), Color.blue]), center: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, startRadius: 5, endRadius: 500))  
+        .background(RadialGradient(gradient: Gradient(colors: [Color("gradient-blue"), Color.white]), center: .center, startRadius: 2, endRadius: 1200))
+        .ignoresSafeArea(.all, edges: .all)
+        Spacer()
+        
+    }
+}
+
+//MARK: -Kategori semeter semua
+struct SemuaView: View {
+    var body: some View{
+        Text("Hello World")
+    }
+}
+
+//MARK: -Kategori Semester Ganjil
+struct GanjilView: View {
+    var body: some View{
+        Text("Hello World")
+    }
+}
+
+//MARK: -Kategori Semeter Genap
+struct GenapView: View {
+    var body: some View{
+        Text("Hello World")
     }
 }
 
