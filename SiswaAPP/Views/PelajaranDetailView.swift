@@ -25,15 +25,14 @@ struct PelajaranDetailView: View {
                             .font(.system(size: 18))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
-                        Text("Mandarin")
+                        Text("Risna Utami, S.s")
                             .font(.system(size: 14))
                             .foregroundColor(.white)
-                            .fontWeight(.bold)
-                        Text("Mandarin")
+                            .fontWeight(.semibold)
+                        Text("Tahun Ajaran 2020/2021")
                             .font(.system(size: 14))
                             .foregroundColor(.white)
-                            .fontWeight(.bold)
-                        
+                            .fontWeight(.semibold)
                     }
                     Spacer()
                 }
@@ -57,16 +56,20 @@ struct PelajaranDetailView: View {
                             else if self.selected == 2 {
                                 GenapView()
                             }
+                            else{
+                                SemuaView()
+                            }
                         }
                     }
                 }
+                Spacer()
                
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)
             .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
         }
-        .background(RadialGradient(gradient: Gradient(colors: [Color("gradient-blue"), Color.white]), center: .center, startRadius: 2, endRadius: 1200))
+        .background(RadialGradient(gradient: Gradient(colors: [Color("gradient-blue"), Color.white]), center: .center, startRadius: 2, endRadius: 600))
         .ignoresSafeArea(.all, edges: .all)
         Spacer()
         
@@ -117,7 +120,32 @@ struct TopBar: View {
 //MARK: -Kategori semeter semua
 struct SemuaView: View {
     var body: some View{
-        Text("Semua Semester")
+        VStack(alignment: .leading, spacing: 15){
+            
+            VStack(alignment: .leading){
+                Text("Kompotensi Dasar 3.6")
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                    .font(.system(size: 14))
+                VStack{
+                    Text("Penilaian Harian 1")
+                        .foregroundColor(.black)
+                        .fontWeight(.bold)
+                        .font(.system(size: 14))
+                }
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color("border-color"), lineWidth: 1)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.white)
+                )
+               
+            }
+            .padding(30)
+            Spacer()
+            
+        }
+        Spacer()
     }
 }
 
