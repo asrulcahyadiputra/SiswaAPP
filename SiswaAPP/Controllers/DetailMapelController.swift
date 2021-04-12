@@ -10,16 +10,17 @@ import Combine
 
 
 class DetailMapelController: ObservableObject{
-    @Published var mapels = [Mapel]()
-    
-    init() {
-        ApiService.shareInstance.callingMapelApi() { (response) in
+    @Published var detailMapels = [DetailMapels]()
+    @Published var detailMapelResponse = [DetailMapelResponse]()
+
+    func get(kodeMatpel:String) {
+        ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: kodeMatpel) { (response) in
             switch response {
             case .success(let data):
              
                 let results = (data as! Results)
                 
-                self.mapels = results.success.data
+               debugPrint(results)
                 
            
             case .failure(let err):

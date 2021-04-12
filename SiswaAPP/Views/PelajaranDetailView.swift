@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct PelajaranDetailView: View {
-    //    @ObservedObject var mp = MapelController()
+  
     let show : Mapel
+   
+    @ObservedObject var detailMapel = DetailMapelController()
     @State var selected = 0
+    @State var data = [DetailMapelResponse]()
     var body: some View {
         VStack {
             //MARK: -Header
@@ -22,8 +25,8 @@ struct PelajaranDetailView: View {
                         .padding(.leading,30)
                         .padding(.trailing,10)
                     VStack(alignment: .leading, spacing:15){
-                        Text(show.nama)
-                            .font(.system(size: 18))
+                        Text("")
+                            .font(.system(size: 16))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                         Text("Risna Utami, S.s")
@@ -35,6 +38,25 @@ struct PelajaranDetailView: View {
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
                     }
+                    .onAppear {
+                        ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: show.kodeMatpel) { (response) in
+                            debugPrint(response)
+                            switch response {
+                            case .success(let data):
+                             
+                               let results = (data as! DetailMapels).success
+                                
+                                self.data = response
+                                
+                           
+                            case .failure(let err):
+                                print("Error")
+                                print(err.localizedDescription)
+                            }
+                            
+                        }
+                    }
+                  
                     Spacer()
                 }
                 .padding(.top, 100)
