@@ -12,8 +12,12 @@ struct HomeView: View {
     
     @EnvironmentObject var userAuth : LoginController
     
+   
     var body: some View {
-        Home()
+        VStack{
+          
+            Home()
+        }
     }
 }
 
@@ -28,7 +32,7 @@ struct Home : View {
     @EnvironmentObject var userAuth : LoginController
     
     @ObservedObject var mp = MapelController()
-    
+    @State var selected = 0
     @State var index = 0
     @State var kodeMatpel = ""
     
@@ -37,6 +41,7 @@ struct Home : View {
         
         NavigationView{
             VStack(spacing: 0){
+                
                 ZStack{
                     VStack{
                         
@@ -67,9 +72,29 @@ struct Home : View {
                         }
                         .padding(.horizontal)
                         .padding(.top,70)
-                        .padding(.bottom, 50)
+                        .padding(.bottom, 20)
+                        
+                        HStack{
+                            Button(action: {}) {
+                                Image("fa-nilai")
+                                    .resizable()
+                                    .frame(width: 14, height: 14)
+                                Text("Penilain")
+                                    .font(.system(size:14))
+                                    .foregroundColor(self.selected == 2 ? Color("dark-blue") : .black)
+                            }
+                            .padding(.trailing,30)
+                            
+                            Button(action: {}){
+                                Image("fa-nilai")
+                                    .resizable()
+                                    .frame(width: 14, height: 14)
+                                Text("Report")
+                                    .font(.system(size:14))
+                                    .foregroundColor(self.selected == 2 ? Color("dark-blue") : .black)
+                            }
+                        }
                     }
-                  
                 }
                 .background(Color.white)
                
@@ -131,5 +156,48 @@ struct Home : View {
         
        
     }
+}
+
+
+//MARK: -Top BAR
+struct HomeTopBar: View {
+    @Binding var selected: Int
+    var body: some View{
+        VStack(alignment: .leading, spacing: 20) {
+            HStack{
+                Text("Semester")
+                    .foregroundColor(.gray)
+                    .padding(.leading,30)
+                    .padding(.trailing,20)
+                Button(action: {
+                    self.selected = 0
+                }){
+                    Text("Semua")
+                        .padding(.trailing,20)
+                        .foregroundColor(self.selected == 0 ? Color("dark-blue") : .black)
+                }
+                Button(action: {
+                    self.selected = 1
+                }){
+                    Text("Ganjil")
+                        .padding(.trailing,20)
+                        .foregroundColor(self.selected == 1 ? Color("dark-blue") : .black)
+                }
+                
+                Button(action: {
+                    self.selected = 2
+                }){
+                    Text("Genap")
+                        .padding(.trailing,20)
+                        .foregroundColor(self.selected == 2 ? Color("dark-blue") : .black)
+                }
+                
+                Spacer()
+            }
+            Spacer()
+        }
+        .padding(.top,30)
+    }
+    
 }
 
