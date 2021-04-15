@@ -12,10 +12,10 @@ struct HomeView: View {
     
     @EnvironmentObject var userAuth : LoginController
     
-   
+    
     var body: some View {
         VStack{
-          
+            
             Home()
         }
     }
@@ -39,7 +39,7 @@ struct Home : View {
     
     @State var kodeMatpel = ""
     
-   
+    
     var body: some View{
         
         NavigationView{
@@ -51,7 +51,7 @@ struct Home : View {
                             PenilaianView()
                         }
                         else if self.tapActive == 1 {
-                           ReportView()
+                            ReportView()
                             
                         }
                     }
@@ -61,7 +61,7 @@ struct Home : View {
             .statusBar(hidden: true)
         }
         
-       
+        
     }
 }
 
@@ -75,7 +75,7 @@ struct HomeTabBar: View {
             VStack{
                 HStack{
                     Button(action: {
-                     
+                        
                     }) {
                         
                         Image("user")
@@ -94,7 +94,7 @@ struct HomeTabBar: View {
                     }
                     
                     Spacer()
-                   
+                    
                     
                 }
                 .padding(.horizontal)
@@ -155,12 +155,12 @@ struct PenilaianView: View {
                                 GridItem(.flexible(minimum: 100, maximum: 200), spacing: 12, alignment: .top),
                             ], spacing: 12, content: {
                                 //list mapel here
-                              
+                                
                                 ForEach(mp.mapels){ mapelItem in
-                                  
+                                    
                                     NavigationLink( destination: PelajaranDetailView(show: mapelItem)){
                                         VStack(alignment: .center){
-                                           
+                                            
                                             Image(mapelItem.kodeMatpel)
                                                 .resizable()
                                                 .frame(width: 50, height: 50)
@@ -174,8 +174,6 @@ struct PenilaianView: View {
                                     .buttonStyle(PlainButtonStyle())
                                     
                                 }
-                                
-                              
                                 
                             })
                             .padding(.horizontal,12)
@@ -193,7 +191,7 @@ struct PenilaianView: View {
             
         }
         Spacer()
-       
+        
     }
     
 }
@@ -202,7 +200,33 @@ struct PenilaianView: View {
 
 struct ReportView: View {
     var body: some View{
-        Text("Halaman Report")
+        ZStack{
+            ScrollView(.vertical,showsIndicators: false ){
+                VStack(alignment: .center){
+                   
+                    HStack{
+                        Spacer()
+                        Image("no-report")
+                            .resizable()
+                            .frame(width: 211, height: 211)
+                        Spacer()
+                    }
+                    
+                    HStack{
+                        Spacer()
+                        VStack{
+                            Text("Nilai raport kamu akan segera")
+                                .foregroundColor(Color("dark-blue"))
+                            Text("hadir disini. Tunggu ya!")
+                                .foregroundColor(Color("dark-blue"))
+                        }
+                      
+                        Spacer()
+                    }
+                   
+                }
+            }
+        }
     }
 }
 
