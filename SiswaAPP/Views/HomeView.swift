@@ -56,8 +56,7 @@ struct Home : View {
                                 Text(userAuth.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
-                             
-                                Text("Kode kKelas " + userAuth.kodeKelas)
+                                Text("Kelas " + userAuth.kodeKelas)
                                     .font(.system(size: 14))
                                     .fontWeight(.semibold)
                             }
