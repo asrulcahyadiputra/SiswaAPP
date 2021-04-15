@@ -58,7 +58,7 @@ class LoginController: ObservableObject {
                             
                             self.kodeKelas = kodeKelas
                             self.name = name
-                            
+                            print(token)
                             //store keychain
                             KeychainWrapper.standard.set(token, forKey: "userToken")
                             KeychainWrapper.standard.set(kodeKelas, forKey: "kodeKelas")

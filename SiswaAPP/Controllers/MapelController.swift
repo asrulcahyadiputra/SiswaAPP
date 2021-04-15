@@ -12,7 +12,7 @@ import Combine
 
 class MapelController: ObservableObject{
     @Published var mapels = [Mapel]()
-    
+  
     init() {
         ApiService.shareInstance.callingMapelApi() { (response) in
             switch response {
@@ -22,7 +22,7 @@ class MapelController: ObservableObject{
                 
                 self.mapels = results.success.data
                 
-           
+               
             case .failure(let err):
                 print("Error")
                 print(err.localizedDescription)

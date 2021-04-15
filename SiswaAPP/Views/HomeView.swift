@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @EnvironmentObject var userAuth : LoginController
+    
     var body: some View {
         Home()
     }
@@ -23,11 +26,15 @@ struct HomeView_Previews: PreviewProvider {
 struct Home : View {
     
     @EnvironmentObject var userAuth : LoginController
+    
     @ObservedObject var mp = MapelController()
+    
     @State var index = 0
     @State var kodeMatpel = ""
     
+   
     var body: some View{
+        
         NavigationView{
             VStack(spacing: 0){
                 ZStack{
@@ -49,7 +56,8 @@ struct Home : View {
                                 Text(userAuth.name)
                                     .font(.title2)
                                     .fontWeight(.bold)
-                                Text("Kelas " + userAuth.kodeKelas)
+                             
+                                Text("Kode kKelas " + userAuth.kodeKelas)
                                     .font(.system(size: 14))
                                     .fontWeight(.semibold)
                             }
