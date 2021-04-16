@@ -15,6 +15,7 @@
 		0440E8722624EFCE0065C40D /* DetailMapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E8712624EFCE0065C40D /* DetailMapelController.swift */; };
 		0440E8752624F0AA0065C40D /* DetailMapelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E8742624F0AA0065C40D /* DetailMapelModel.swift */; };
 		04604AB0261AE1E100AD6FE6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04604AAF261AE1E100AD6FE6 /* HomeView.swift */; };
+		048FC6992629266B00F82F46 /* AkunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC6982629266B00F82F46 /* AkunView.swift */; };
 		04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B72616B92300B68735 /* AppDelegate.swift */; };
 		04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B92616B92300B68735 /* SceneDelegate.swift */; };
 		04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5BB2616B92300B68735 /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 		0440E8712624EFCE0065C40D /* DetailMapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapelController.swift; sourceTree = "<group>"; };
 		0440E8742624F0AA0065C40D /* DetailMapelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapelModel.swift; sourceTree = "<group>"; };
 		04604AAF261AE1E100AD6FE6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		048FC6982629266B00F82F46 /* AkunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunView.swift; sourceTree = "<group>"; };
 		04DFB5B42616B92300B68735 /* SiswaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiswaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DFB5B72616B92300B68735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DFB5B92616B92300B68735 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				04FE34112618AA3B0004D0C3 /* PesanView.swift */,
 				04604AAF261AE1E100AD6FE6 /* HomeView.swift */,
 				0440E86E26245D860065C40D /* PelajaranDetailView.swift */,
+				048FC6982629266B00F82F46 /* AkunView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				04FE33F0261816C80004D0C3 /* LoginInputModel.swift in Sources */,
 				04FE3403261841820004D0C3 /* MapelModel.swift in Sources */,
 				04FE3400261833C00004D0C3 /* ProfileModel.swift in Sources */,
+				048FC6992629266B00F82F46 /* AkunView.swift in Sources */,
 				04FE33E62616DEAE0004D0C3 /* LoginModel.swift in Sources */,
 				04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */,
 				04FE33F42618174E0004D0C3 /* ApiService.swift in Sources */,
