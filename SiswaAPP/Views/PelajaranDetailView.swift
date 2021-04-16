@@ -66,6 +66,7 @@ struct PelajaranDetailView: View {
                 .padding(.top, 100)
                 .padding(.bottom,30)
             }
+            .background(Image("bg-detail-image"))
             //MARK: -Content
             ZStack{
                 VStack{
@@ -96,7 +97,7 @@ struct PelajaranDetailView: View {
             .background(Color.white)
             .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
         }
-        .background(RadialGradient(gradient: Gradient(colors: [Color("gradient-blue"), Color.white]), center: .center, startRadius: 2, endRadius: 600))
+      
         
         .ignoresSafeArea(.all, edges: .all)
         Spacer()
@@ -140,6 +141,7 @@ struct TopBar: View {
             }
             Spacer()
         }
+       
         .padding(.top,30)
     }
     

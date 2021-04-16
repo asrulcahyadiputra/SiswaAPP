@@ -15,6 +15,7 @@ struct AkunView: View {
 
 //MARK: -Top Bar Akun
 struct AkunTop: View {
+    @EnvironmentObject var userAuth : LoginController
     var  body: some View {
         VStack{
             VStack{
@@ -29,11 +30,11 @@ struct AkunTop: View {
                     .resizable()
                     .frame(width: 76, height: 76)
                 
-                Text("Nama Akun Here")
+                Text(userAuth.name)
                     .foregroundColor(Color("dark-blue"))
                     .font(.system(size: 14, weight: .bold))
                 
-                Text("123456")
+                Text(userAuth.nis)
                     .font(.system(size: 12))
             }
             .padding(.bottom,15)
@@ -49,6 +50,7 @@ struct bodyAkun: View {
     @State var touchidOn : Bool = false
     var body: some View{
         List{
+            
             HStack{
                 Image("fi-rr-user")
                     .frame(width: 20, height: 20)
@@ -59,6 +61,7 @@ struct bodyAkun: View {
                 Image("fi-rr-angle-small-right")
                 
             }
+            
             HStack{
                 Image("fi-rr-graduation-cap")
                     .frame(width: 20, height: 20)
@@ -69,6 +72,7 @@ struct bodyAkun: View {
                 Image("fi-rr-angle-small-right")
                 
             }
+            
             HStack{
                 Image("fi-rr-key")
                     .frame(width: 20, height: 20)
@@ -79,6 +83,7 @@ struct bodyAkun: View {
                 Image("fi-rr-angle-small-right")
                 
             }
+            
             HStack{
                 Image("fi-rr-fingerprint")
                     .frame(width: 20, height: 20)

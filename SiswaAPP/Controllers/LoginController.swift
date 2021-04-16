@@ -25,6 +25,7 @@ class LoginController: ObservableObject {
     @Published var userToken : String = ""
     @Published var kodeKelas : String = ""
     @Published var name : String = ""
+    @Published var nis: String = ""
     
     func cekLogin(username:String, password: String) {
         let Login = LoginInputModel(nik: username, password: password)
@@ -45,6 +46,7 @@ class LoginController: ObservableObject {
                             let userProfile = (data as! Profile).user
                             let kodeKelas = userProfile[0].kodeKelas
                             let name = userProfile[0].nama
+                            let nis = userProfile[0].nis
                             
                             let periodeData = (data as! Profile).periode
                             let periode  = periodeData[0].periode
@@ -58,7 +60,7 @@ class LoginController: ObservableObject {
                             
                             self.kodeKelas = kodeKelas
                             self.name = name
-                            print(token)
+                            self.nis = nis
                             //store keychain
                             KeychainWrapper.standard.set(token, forKey: "userToken")
                             KeychainWrapper.standard.set(kodeKelas, forKey: "kodeKelas")
