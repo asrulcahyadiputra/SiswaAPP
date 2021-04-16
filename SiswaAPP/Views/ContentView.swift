@@ -27,7 +27,7 @@ struct ContentView: View {
                     .tabItem{
                         Label("Pesan", image:"fa-message")
                     }
-                Text("Akun")
+                 AkunView()
                     .tabItem{
                         Label("Akun", image:"fa-akun")
                     }

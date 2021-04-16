@@ -46,6 +46,7 @@ struct AkunTop: View {
 
 //MARK: -Body Akun View
 struct bodyAkun: View {
+    @State var touchidOn : Bool = false
     var body: some View{
         List{
             HStack{
@@ -53,6 +54,7 @@ struct bodyAkun: View {
                     .frame(width: 20, height: 20)
                     .padding(.trailing,20)
                 Text("Data Pribadi")
+                    .font(.system(size: 12))
                 Spacer()
                 Image("fi-rr-angle-small-right")
                 
@@ -61,7 +63,8 @@ struct bodyAkun: View {
                 Image("fi-rr-graduation-cap")
                     .frame(width: 20, height: 20)
                     .padding(.trailing,20)
-                Text("Data Pribadi")
+                Text("Data Akademik")
+                    .font(.system(size: 12))
                 Spacer()
                 Image("fi-rr-angle-small-right")
                 
@@ -70,7 +73,8 @@ struct bodyAkun: View {
                 Image("fi-rr-key")
                     .frame(width: 20, height: 20)
                     .padding(.trailing,20)
-                Text("Data Pribadi")
+                Text("Username dan Password")
+                    .font(.system(size: 12))
                 Spacer()
                 Image("fi-rr-angle-small-right")
                 
@@ -79,9 +83,12 @@ struct bodyAkun: View {
                 Image("fi-rr-fingerprint")
                     .frame(width: 20, height: 20)
                     .padding(.trailing,20)
-                Text("Data Pribadi")
+                Text("Masuk dengan sidik jari")
+                    .font(.system(size: 12))
                 Spacer()
-                Image("fi-rr-angle-small-right")
+                Toggle(isOn: $touchidOn, label: {
+                    Text("")
+                })
                 
             }
            
@@ -89,10 +96,11 @@ struct bodyAkun: View {
         
         Spacer()
         VStack{
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+            Button(action: {}){
                 Text("Keluar")
                     .foregroundColor(.red)
             }
+            .padding(.bottom,30)
             
         }
     }
