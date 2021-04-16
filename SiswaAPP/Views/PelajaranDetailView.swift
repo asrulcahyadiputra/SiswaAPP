@@ -88,17 +88,16 @@ struct PelajaranDetailView: View {
                                 SemuaView()
                             }
                         }
+                        Spacer()
                     }
                 }
                 Spacer()
                 
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+           
             .background(Color.white)
             .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
         }
-      
-        
         .ignoresSafeArea(.all, edges: .all)
         Spacer()
         
@@ -139,9 +138,8 @@ struct TopBar: View {
                 
                 Spacer()
             }
-            Spacer()
         }
-       
+        .padding(.bottom)
         .padding(.top,30)
     }
     
@@ -150,46 +148,91 @@ struct TopBar: View {
 //MARK: -Kategori semeter semua
 struct SemuaView: View {
     var body: some View{
-        VStack(alignment: .leading, spacing: 15){
-            
-            VStack(alignment: .leading){
-                Text("Kompotensi Dasar 3.6")
-                    .foregroundColor(.black)
-                    .fontWeight(.bold)
-                    .font(.system(size: 14))
+        ZStack{
+            ScrollView{
                 VStack{
-                    Text("Penilaian Harian 1")
-                        .foregroundColor(.black)
-                        .fontWeight(.bold)
-                        .font(.system(size: 14))
+                    HStack{
+                        Spacer()
+                        Image("no-data")
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                        
+                        Spacer()
+                    }
+                    VStack{
+                        Text("Oops...!")
+                            .foregroundColor(Color("dark-blue"))
+                        Text("Data tidak ditemukan")
+                            .foregroundColor(Color("dark-blue"))
+                    }
+                    
+                    Spacer()
+                    
                 }
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color("border-color"), lineWidth: 1)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color.white)
-                )
-                
+                Spacer()
             }
-            .padding(30)
-            Spacer()
-            
         }
-        Spacer()
     }
 }
 
 //MARK: -Kategori Semester Ganjil
 struct GanjilView: View {
     var body: some View{
-        Text("Semester Ganjil")
+        ZStack{
+            ScrollView{
+                VStack{
+                    HStack{
+                        Spacer()
+                        Image("no-data")
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                        
+                        Spacer()
+                    }
+                    VStack{
+                        Text("Oops...!")
+                            .foregroundColor(Color("dark-blue"))
+                        Text("Data tidak ditemukan")
+                            .foregroundColor(Color("dark-blue"))
+                    }
+                    
+                    Spacer()
+                    
+                }
+                Spacer()
+            }
+        }
+        
     }
 }
 
 //MARK: -Kategori Semeter Genap
 struct GenapView: View {
     var body: some View{
-        Text("Semester Genap")
+        ZStack{
+            ScrollView{
+                VStack{
+                    HStack{
+                        Spacer()
+                        Image("no-data")
+                            .resizable()
+                            .frame(width: 200, height: 200)
+                        
+                        Spacer()
+                    }
+                    VStack{
+                        Text("Oops...!")
+                            .foregroundColor(Color("dark-blue"))
+                        Text("Data tidak ditemukan")
+                            .foregroundColor(Color("dark-blue"))
+                    }
+                    
+                    Spacer()
+                    
+                }
+                Spacer()
+            }
+        }
     }
 }
 
