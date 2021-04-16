@@ -23,7 +23,7 @@ struct ContentView: View {
                     .tabItem{
                         Label("Pelajaran", image:"fa-nilai")
                     }
-                Text("Pesan")
+                PesanView()
                     .tabItem{
                         Label("Pesan", image:"fa-message")
                     }

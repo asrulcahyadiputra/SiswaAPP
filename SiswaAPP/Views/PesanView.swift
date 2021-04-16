@@ -75,8 +75,8 @@ struct PesanTopBar: View {
                 .padding(.trailing,80)
                 .padding(.bottom,20)
             }
-            .background(Color.white)
-            .shadow(radius: 10, x: 0.0, y: 0.0)
+            .background(Color.white.shadow(radius: 5, x: 0.0, y: 0.0))
+            
             Spacer()
         }
     }
@@ -84,7 +84,71 @@ struct PesanTopBar: View {
 
 struct InboxView: View {
     var body: some View{
-        Text("Inbox")
+        VStack{
+            List{
+                HStack{
+                    Image("user")
+                        .resizable()
+                        .frame(width: 35, height: 35)
+                    VStack(alignment: .leading){
+                        Text("Bahasa Indonesia")
+                        Text("Lorem ipsum dolor sit amet, consectetur")
+                            .font(.system(size: 12))
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
+                    VStack{
+                        Text("10.20")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 14))
+                       Text("3")
+                        .font(.system(size: 14))
+                        .padding(7)
+                        .background(Color("dark-blue"))
+                        .clipShape(Circle())
+                        .foregroundColor(.white)
+                       
+                    }
+                    
+                  
+                }
+               
+                .padding(.bottom,20)
+                HStack{
+                    Image("user")
+                        .resizable()
+                        .frame(width: 35, height: 35)
+                    VStack(alignment: .leading){
+                        Text("Matematika")
+                        Text("Lorem ipsum dolor sit amet, consectetur")
+                            .font(.system(size: 12))
+                            .foregroundColor(.gray)
+                    }
+                    Spacer()
+                    VStack{
+                        Text("31/03/2021")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 14))
+                      
+                       
+                    }
+                    
+                  
+                }
+               
+                .padding(.bottom,20)
+                
+                
+            }
+            .onAppear {
+             UITableView.appearance().separatorStyle = .none
+            }
+            .onDisappear {
+                UITableView.appearance().separatorStyle = .singleLine
+            }
+            
+        }
+        .padding(.top,20)
     }
 }
 
