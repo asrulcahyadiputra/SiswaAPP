@@ -94,7 +94,7 @@ struct PelajaranDetailView: View {
                 Spacer()
                 
             }
-           
+            
             .background(Color.white)
             .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
         }
