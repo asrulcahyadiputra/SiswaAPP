@@ -17,10 +17,10 @@ struct PesanView: View {
                     GeometryReader{ _ in
                         VStack{
                             if self.selectedPesan == 0 {
-                               InboxView()
+                                InboxView()
                             }
                             else if self.selectedPesan == 1 {
-                              NotifikasiView()
+                                NotifikasiView()
                                 
                             }
                         }
@@ -53,9 +53,9 @@ struct PesanTopBar: View {
                     }){
                         HStack{
                             Image(systemName: "message")
-                                .foregroundColor(self.selected == 0 ? Color("dark-blue") : .black)
+                                .foregroundColor(self.selected == 0 ? Color("dark-blue") : .gray)
                             Text("Inbox")
-                                .foregroundColor(self.selected == 0 ? Color("dark-blue") : .black)
+                                .foregroundColor(self.selected == 0 ? Color("dark-blue") : .gray)
                         }
                     }
                     Spacer()
@@ -64,9 +64,9 @@ struct PesanTopBar: View {
                     }){
                         HStack{
                             Image(systemName: "bell")
-                                .foregroundColor(self.selected == 1 ? Color("dark-blue") : .black)
+                                .foregroundColor(self.selected == 1 ? Color("dark-blue") : .gray)
                             Text("Notifikasi")
-                                .foregroundColor(self.selected == 1 ? Color("dark-blue") : .black)
+                                .foregroundColor(self.selected == 1 ? Color("dark-blue") : .gray)
                         }
                     }
                 }
@@ -76,7 +76,7 @@ struct PesanTopBar: View {
                 .padding(.bottom,20)
             }
             .background(Color.white)
-            .shadow(color: Color("bg-dark"), radius: 10, x: 0.0, y: 0.0)
+            .shadow(radius: 10, x: 0.0, y: 0.0)
             Spacer()
         }
     }
