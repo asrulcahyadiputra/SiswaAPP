@@ -36,17 +36,72 @@ struct AkunTop: View {
                 Text("123456")
                     .font(.system(size: 12))
             }
-          
+            .padding(.bottom,15)
+            bodyAkun()
             Spacer()
+            
         }
     }
 }
 
 //MARK: -Body Akun View
-
+struct bodyAkun: View {
+    var body: some View{
+        List{
+            HStack{
+                Image("fi-rr-user")
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing,20)
+                Text("Data Pribadi")
+                Spacer()
+                Image("fi-rr-angle-small-right")
+                
+            }
+            HStack{
+                Image("fi-rr-graduation-cap")
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing,20)
+                Text("Data Pribadi")
+                Spacer()
+                Image("fi-rr-angle-small-right")
+                
+            }
+            HStack{
+                Image("fi-rr-key")
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing,20)
+                Text("Data Pribadi")
+                Spacer()
+                Image("fi-rr-angle-small-right")
+                
+            }
+            HStack{
+                Image("fi-rr-fingerprint")
+                    .frame(width: 20, height: 20)
+                    .padding(.trailing,20)
+                Text("Data Pribadi")
+                Spacer()
+                Image("fi-rr-angle-small-right")
+                
+            }
+           
+        }
+        
+        Spacer()
+        VStack{
+            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/){
+                Text("Keluar")
+                    .foregroundColor(.red)
+            }
+            
+        }
+    }
+}
 
 struct AkunView_Previews: PreviewProvider {
     static var previews: some View {
         AkunView()
     }
 }
+
+
