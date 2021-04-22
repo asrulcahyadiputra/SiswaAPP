@@ -16,6 +16,9 @@ struct PelajaranDetailView: View {
     @State var detailMatpel = [DetailMapelResponse]()
     @State var namaTa = ""
     @State var namaGuru = ""
+    @State var CourseCode = ""
+    @State var PeriodCode = "All"
+    @State var ClassCode = ""
     var body: some View {
         VStack {
             //MARK: -Header
@@ -40,6 +43,7 @@ struct PelajaranDetailView: View {
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
                     }
+                 
                     .onAppear {
                         ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: show.kodeMatpel) { (response) in
                             
@@ -53,6 +57,7 @@ struct PelajaranDetailView: View {
                                 let namaGuru = results.dataGuru[0].namaGuru
                                 self.namaGuru = namaGuru
                                 
+                                self.ClassCode = show.kodeMatpel
                             case .failure(let err):
                                 print("Error")
                                 print(err.localizedDescription)
@@ -70,8 +75,10 @@ struct PelajaranDetailView: View {
             //MARK: -Content
             ZStack{
                 VStack{
-                    TopBar(selected: $selected)
-                    
+                    TopBar(selected: $selected, courseCode: show.kodeMatpel, periodCode: $PeriodCode, classCode: $ClassCode)
+                    var paramList = [
+                        Params(courseCode: self.CourseCode, classCode: kodeKelas!, periodCode: self.PeriodCode)
+                    ]
                     GeometryReader{ _ in
                         VStack{
                             if self.selected == 0 {
@@ -79,13 +86,9 @@ struct PelajaranDetailView: View {
                             }
                             else if self.selected == 1 {
                                 GanjilView()
-                                
                             }
                             else if self.selected == 2 {
                                 GenapView()
-                            }
-                            else{
-                                SemuaView()
                             }
                         }
                         Spacer()
@@ -106,6 +109,8 @@ struct PelajaranDetailView: View {
 //MARK: -Top BAR
 struct TopBar: View {
     @Binding var selected: Int
+    @Binding var periodCode : String
+    @Binding var classCode: String
     var body: some View{
         VStack(alignment: .leading, spacing: 20) {
             HStack{
@@ -115,6 +120,8 @@ struct TopBar: View {
                     .padding(.trailing,20)
                 Button(action: {
                     self.selected = 0
+                    self.classCode = kodeKelas!
+                    self.periodCode = "All"
                 }){
                     Text("Semua")
                         .padding(.trailing,20)
@@ -122,6 +129,8 @@ struct TopBar: View {
                 }
                 Button(action: {
                     self.selected = 1
+                    self.classCode = kodeKelas!
+                    self.periodCode = "1"
                 }){
                     Text("Ganjil")
                         .padding(.trailing,20)
@@ -130,6 +139,8 @@ struct TopBar: View {
                 
                 Button(action: {
                     self.selected = 2
+                    self.classCode = kodeKelas!
+                    self.periodCode = "2"
                 }){
                     Text("Genap")
                         .padding(.trailing,20)
@@ -147,6 +158,7 @@ struct TopBar: View {
 
 //MARK: -Kategori semeter semua
 struct SemuaView: View {
+   
     var body: some View{
         ZStack{
             ScrollView{
@@ -164,6 +176,7 @@ struct SemuaView: View {
                             .foregroundColor(Color("dark-blue"))
                         Text("Data tidak ditemukan")
                             .foregroundColor(Color("dark-blue"))
+                       
                     }
                     
                     Spacer()
@@ -236,8 +249,9 @@ struct GenapView: View {
     }
 }
 
-//struct PelajaranDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PelajaranDetailView(show: Mapel)
-//    }
-//}
+
+//MARK: -Parameter Model
+struct Params: Decodable, Identifiable {
+    var id = UUID()
+    let courseCode, classCode, periodCode: String
+}

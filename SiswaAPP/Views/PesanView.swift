@@ -109,8 +109,6 @@ struct InboxView: View {
                         .foregroundColor(.white)
                        
                     }
-                    
-                  
                 }
                
                 .padding(.bottom,20)

@@ -21,13 +21,13 @@ struct ContentView: View {
             TabView{
                 HomeView()
                     .tabItem{
-                        Label("Pelajaran", image:"fa-nilai")
+                        Label("Pelajaran", image:"fi-rr-test")
                     }
                 PesanView()
                     .tabItem{
                         Label("Pesan", image:"fa-message")
                     }
-                 AkunView()
+                AkunView()
                     .tabItem{
                         Label("Akun", image:"fa-akun")
                     }
