@@ -137,6 +137,7 @@ struct InboxView: View {
                 }
                
                 .padding(.bottom,20)
+                .padding(.top,20)
                 
                 
             }
