@@ -21,7 +21,6 @@ struct PelajaranDetailView: View {
     @State var ClassCode = ""
     var body: some View {
         VStack {
-            //MARK: -Header
             VStack{
                 HStack {
                     Image(show.kodeMatpel)
@@ -45,7 +44,7 @@ struct PelajaranDetailView: View {
                     }
                  
                     .onAppear {
-                        ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: show.kodeMatpel) { (response) in
+                        ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: show.kodeMatpel, kodeSemester: "All") { (response) in
                             
                             switch response {
                             case .success(let data):
@@ -72,27 +71,21 @@ struct PelajaranDetailView: View {
                 .padding(.bottom,30)
             }
             .background(Image("bg-detail-image"))
-            //MARK: -Content
             ZStack{
                 VStack{
-                    TopBar(selected: $selected, courseCode: show.kodeMatpel, periodCode: $PeriodCode, classCode: $ClassCode)
-                    var paramList = [
-                        Params(courseCode: self.CourseCode, classCode: kodeKelas!, periodCode: self.PeriodCode)
-                    ]
-                    GeometryReader{ _ in
-                        VStack{
-                            if self.selected == 0 {
-                                SemuaView()
-                            }
-                            else if self.selected == 1 {
-                                GanjilView()
-                            }
-                            else if self.selected == 2 {
-                                GenapView()
-                            }
+                    TopBar(selected: $selected)
+                    VStack{
+                        if self.selected == 0 {
+                            SemuaView(courseCode: show.kodeMatpel)
                         }
-                        Spacer()
+                        else if self.selected == 1 {
+                            GanjilView()
+                        }
+                        else if self.selected == 2 {
+                            GenapView()
+                        }
                     }
+                    Spacer()
                 }
                 Spacer()
                 
@@ -106,11 +99,13 @@ struct PelajaranDetailView: View {
         
     }
 }
+
+
+
+
 //MARK: -Top BAR
 struct TopBar: View {
     @Binding var selected: Int
-    @Binding var periodCode : String
-    @Binding var classCode: String
     var body: some View{
         VStack(alignment: .leading, spacing: 20) {
             HStack{
@@ -120,8 +115,7 @@ struct TopBar: View {
                     .padding(.trailing,20)
                 Button(action: {
                     self.selected = 0
-                    self.classCode = kodeKelas!
-                    self.periodCode = "All"
+                  
                 }){
                     Text("Semua")
                         .padding(.trailing,20)
@@ -129,8 +123,7 @@ struct TopBar: View {
                 }
                 Button(action: {
                     self.selected = 1
-                    self.classCode = kodeKelas!
-                    self.periodCode = "1"
+                   
                 }){
                     Text("Ganjil")
                         .padding(.trailing,20)
@@ -139,8 +132,7 @@ struct TopBar: View {
                 
                 Button(action: {
                     self.selected = 2
-                    self.classCode = kodeKelas!
-                    self.periodCode = "2"
+                   
                 }){
                     Text("Genap")
                         .padding(.trailing,20)
@@ -156,37 +148,6 @@ struct TopBar: View {
     
 }
 
-//MARK: -Kategori semeter semua
-struct SemuaView: View {
-   
-    var body: some View{
-        ZStack{
-            ScrollView{
-                VStack{
-                    HStack{
-                        Spacer()
-                        Image("no-data")
-                            .resizable()
-                            .frame(width: 200, height: 200)
-                        
-                        Spacer()
-                    }
-                    VStack{
-                        Text("Oops...!")
-                            .foregroundColor(Color("dark-blue"))
-                        Text("Data tidak ditemukan")
-                            .foregroundColor(Color("dark-blue"))
-                       
-                    }
-                    
-                    Spacer()
-                    
-                }
-                Spacer()
-            }
-        }
-    }
-}
 
 //MARK: -Kategori Semester Ganjil
 struct GanjilView: View {

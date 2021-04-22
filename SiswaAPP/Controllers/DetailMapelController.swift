@@ -14,13 +14,13 @@ class DetailMapelController: ObservableObject{
     @Published var detailMapelResponse = [DetailMapelResponse]()
 
     func get(kodeMatpel:String) {
-        ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: kodeMatpel) { (response) in
+        ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: kodeMatpel, kodeSemester: "All") { (response) in
             switch response {
             case .success(let data):
              
                 let results = (data as! Results)
                 
-               debugPrint(results)
+//                self.detailMapels = results
                 
            
             case .failure(let err):

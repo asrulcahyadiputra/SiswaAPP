@@ -8,5 +8,6 @@ target 'SiswaAPP' do
   # Pods for SiswaAPP
   pod "Alamofire"
   pod "SwiftKeychainWrapper"
+  pod "SwiftyJSON"
 
 end

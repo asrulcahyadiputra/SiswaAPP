@@ -115,7 +115,7 @@ class ApiService{
         }
     }
     
-    func callingDetailMapelApi(kodeMatpel:String,completionHandler: @escaping Handler) {
+    func callingDetailMapelApi(kodeMatpel:String,kodeSemester: String,completionHandler: @escaping Handler) {
         
         let headers: HTTPHeaders = [
             "Authorization": "Bearer " + userToken!,
@@ -123,7 +123,7 @@ class ApiService{
         
         let parameters : Parameters = [
             "kode_kelas"    : kodeKelas!,
-            "kode_sem"      : "1",
+            "kode_sem"      : kodeSemester,
             "kode_matpel"   : kodeMatpel
         ]
         

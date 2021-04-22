@@ -11,6 +11,7 @@
 		04164E78261FFFF100DBAF0E /* CustomCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04164E77261FFFF100DBAF0E /* CustomCorner.swift */; };
 		0417A5222619700C0053F3E2 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5212619700C0053F3E2 /* BlurView.swift */; };
 		0417A5282619A44E0053F3E2 /* MapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5272619A44D0053F3E2 /* MapelController.swift */; };
+		043FB52D26318ECD00181BAB /* SemuaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FB52C26318ECD00181BAB /* SemuaView.swift */; };
 		0440E86F26245D860065C40D /* PelajaranDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E86E26245D860065C40D /* PelajaranDetailView.swift */; };
 		0440E8722624EFCE0065C40D /* DetailMapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E8712624EFCE0065C40D /* DetailMapelController.swift */; };
 		0440E8752624F0AA0065C40D /* DetailMapelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E8742624F0AA0065C40D /* DetailMapelModel.swift */; };
@@ -41,6 +42,7 @@
 		04164E77261FFFF100DBAF0E /* CustomCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCorner.swift; sourceTree = "<group>"; };
 		0417A5212619700C0053F3E2 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		0417A5272619A44D0053F3E2 /* MapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapelController.swift; sourceTree = "<group>"; };
+		043FB52C26318ECD00181BAB /* SemuaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemuaView.swift; sourceTree = "<group>"; };
 		0440E86E26245D860065C40D /* PelajaranDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelajaranDetailView.swift; sourceTree = "<group>"; };
 		0440E8712624EFCE0065C40D /* DetailMapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapelController.swift; sourceTree = "<group>"; };
 		0440E8742624F0AA0065C40D /* DetailMapelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapelModel.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		043FB52B26318EAC00181BAB /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				043FB52C26318ECD00181BAB /* SemuaView.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		04DFB5AB2616B92300B68735 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 		04DFB5CD2616B98600B68735 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				043FB52B26318EAC00181BAB /* Filter */,
 				04FE340826186A650004D0C3 /* Core */,
 				04DFB5BB2616B92300B68735 /* ContentView.swift */,
 				04DFB5D02616B9EE00B68735 /* LoginView.swift */,
@@ -336,6 +347,7 @@
 				04FE3403261841820004D0C3 /* MapelModel.swift in Sources */,
 				04FE3400261833C00004D0C3 /* ProfileModel.swift in Sources */,
 				048FC6992629266B00F82F46 /* AkunView.swift in Sources */,
+				043FB52D26318ECD00181BAB /* SemuaView.swift in Sources */,
 				04FE33E62616DEAE0004D0C3 /* LoginModel.swift in Sources */,
 				04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */,
 				04FE33F42618174E0004D0C3 /* ApiService.swift in Sources */,
