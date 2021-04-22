@@ -7,43 +7,46 @@
 
 import SwiftUI
 import SwiftyJSON
-
+import Alamofire
 
 struct SemuaView: View {
     let courseCode : String
     var kodeSemester: String =  "All"
-    @State var detailMatpel = [DetailMapelResponse]()
+    @State var detailMatpel = []
+    @State var dataKompotensi = []
     @EnvironmentObject var userAuth : LoginController
     
     var body: some View {
         ZStack{
             ScrollView{
                 VStack{
-                    HStack{
-                        Spacer()
-                        Image("no-data")
-                            .resizable()
-                            .frame(width: 200, height: 200)
-                        
-                        Spacer()
-                    }
                     VStack{
-                        ForEach(self.detailMatpel.indices, id: \.self){ detailItem in
-                            Text("Hallo")
+                      
+                        ForEach(self.dataKompotensi.indices, id: \.self){ lItem in
+                            Text("Kompetensi Dasar 3.6" )
                         }
                     }
                     .onAppear {
-                        ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: courseCode, kodeSemester: kodeSemester) { (response) in
-                            
-                            switch response {
-                            case .success(let data):
+                        let headers: HTTPHeaders = [
+                            "Authorization": "Bearer " + userToken!,
+                        ]
+                        let parameters : Parameters = [
+                            "kode_kelas"    : kodeKelas!,
+                            "kode_sem"      : "All",
+                            "kode_matpel"   : self.courseCode
+                        ]
+                        AF.request(detailMapel_url, method: .get,parameters: parameters ,encoding: URLEncoding.queryString, headers: headers).responseJSON { response in
+                            switch response.result {
+                            case .success(let values):
+                                let ResponseData = JSON(values)
+                                let data = ResponseData["success"]
+                                let dataKompotensi = data["data_kompetensi"]
+                                self.detailMatpel = [data]
+                                self.dataKompotensi = [dataKompotensi]
+                                print(dataKompotensi)
                                 
-                                let results = (data as! DetailMapels).success
-//                                self.detailMatpel = results
-                                print(results)
-                            case .failure(let err):
-                                print("Error")
-                                print(err.localizedDescription)
+                            case .failure(let error):
+                                print(error)
                             }
                             
                         }
@@ -57,4 +60,8 @@ struct SemuaView: View {
         }
     }
 }
+
+
+
+
 
