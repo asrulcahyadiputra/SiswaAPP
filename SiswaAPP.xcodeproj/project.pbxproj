@@ -12,6 +12,7 @@
 		0417A5222619700C0053F3E2 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5212619700C0053F3E2 /* BlurView.swift */; };
 		0417A5282619A44E0053F3E2 /* MapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0417A5272619A44D0053F3E2 /* MapelController.swift */; };
 		043FB52D26318ECD00181BAB /* SemuaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FB52C26318ECD00181BAB /* SemuaView.swift */; };
+		043FB5362631B80F00181BAB /* PreviewMapelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FB5352631B80F00181BAB /* PreviewMapelModel.swift */; };
 		0440E86F26245D860065C40D /* PelajaranDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E86E26245D860065C40D /* PelajaranDetailView.swift */; };
 		0440E8722624EFCE0065C40D /* DetailMapelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E8712624EFCE0065C40D /* DetailMapelController.swift */; };
 		0440E8752624F0AA0065C40D /* DetailMapelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E8742624F0AA0065C40D /* DetailMapelModel.swift */; };
@@ -43,6 +44,7 @@
 		0417A5212619700C0053F3E2 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		0417A5272619A44D0053F3E2 /* MapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapelController.swift; sourceTree = "<group>"; };
 		043FB52C26318ECD00181BAB /* SemuaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemuaView.swift; sourceTree = "<group>"; };
+		043FB5352631B80F00181BAB /* PreviewMapelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMapelModel.swift; sourceTree = "<group>"; };
 		0440E86E26245D860065C40D /* PelajaranDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PelajaranDetailView.swift; sourceTree = "<group>"; };
 		0440E8712624EFCE0065C40D /* DetailMapelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapelController.swift; sourceTree = "<group>"; };
 		0440E8742624F0AA0065C40D /* DetailMapelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapelModel.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				04FE33FF261833C00004D0C3 /* ProfileModel.swift */,
 				04FE3402261841820004D0C3 /* MapelModel.swift */,
 				0440E8742624F0AA0065C40D /* DetailMapelModel.swift */,
+				043FB5352631B80F00181BAB /* PreviewMapelModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				0440E86F26245D860065C40D /* PelajaranDetailView.swift in Sources */,
 				0440E8722624EFCE0065C40D /* DetailMapelController.swift in Sources */,
 				0440E8752624F0AA0065C40D /* DetailMapelModel.swift in Sources */,
+				043FB5362631B80F00181BAB /* PreviewMapelModel.swift in Sources */,
 				04FE33F0261816C80004D0C3 /* LoginInputModel.swift in Sources */,
 				04FE3403261841820004D0C3 /* MapelModel.swift in Sources */,
 				04FE3400261833C00004D0C3 /* ProfileModel.swift in Sources */,

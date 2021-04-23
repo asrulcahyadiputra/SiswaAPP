@@ -75,6 +75,7 @@ struct PelajaranDetailView: View {
                 VStack{
                     TopBar(selected: $selected)
                     VStack{
+                        
                         if self.selected == 0 {
                             SemuaView(courseCode: show.kodeMatpel)
                         }
@@ -84,6 +85,7 @@ struct PelajaranDetailView: View {
                         else if self.selected == 2 {
                             GenapView()
                         }
+                        
                     }
                     Spacer()
                 }
