@@ -64,14 +64,12 @@ struct PelajaranDetailView: View {
                             
                         }
                     }
-                    
-                    Spacer()
                 }
                 .padding(.top, 100)
                 .padding(.bottom,30)
             }
             .background(Image("bg-detail-image"))
-            ZStack{
+          
                 VStack{
                     TopBar(selected: $selected)
                     VStack{
@@ -87,18 +85,12 @@ struct PelajaranDetailView: View {
                         }
                         
                     }
-                    Spacer()
                 }
-                Spacer()
-                
-            }
             
             .background(Color.white)
             .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
         }
         .ignoresSafeArea(.all, edges: .all)
-        Spacer()
-        
     }
 }
 
@@ -141,7 +133,6 @@ struct TopBar: View {
                         .foregroundColor(self.selected == 2 ? Color("dark-blue") : .black)
                 }
                 
-                Spacer()
             }
         }
         .padding(.bottom)

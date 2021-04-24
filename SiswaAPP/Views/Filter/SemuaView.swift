@@ -6,85 +6,97 @@
 //
 
 import SwiftUI
-import SwiftyJSON
 import Alamofire
 
 struct SemuaView: View {
     let courseCode : String
     var kodeSemester: String =  "All"
     
-    @State var detailMatpel : JSON = JSON()
-    @State var dataKompt : [PreviewDataKompetensi] = []
+    @State var dataKompt = [PreviewDataKompetensi]()
     @EnvironmentObject var userAuth : LoginController
     
     var body: some View {
-        ZStack{
-            ScrollView{
-                VStack{
-                   
-                    VStack{
-                        ForEach(self.dataKompt){ dt in
-                            VStack(alignment: .leading){
-                                HStack{
-                                    Text("Kompotensi Dasar \(dt.kodeKd)")
-                                        .font(.system(size: 14))
+        ScrollView{
+            
+            
+            VStack {
+                ForEach(self.dataKompt){ dt in
+                    VStack(alignment: .leading){
+                        HStack{
+                            Text("Kompetensi Dasar  \(dt.kodeKd)")
+                                .font(.system(size: 14))
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        HStack{
+                            Text(dt.namaKd)
+                                .font(.system(size: 14))
+                            Spacer()
+                        }
+                        .padding(.bottom,10)
+                        ForEach(dt.pelaksanaan) { sdt in
+                            VStack {
+                                HStack {
+                                    Text(sdt.pelaksanaan)
+                                        .font(.system(size:14))
                                         .fontWeight(.bold)
                                     Spacer()
                                 }
+                                
+                                HStack {
+                                    var nilai = (sdt.nilai as NSString).doubleValue
+                                    ProgressView("", value: nilai , total:100 )
+                                    Spacer()
+                                    
+                                    Text("\(String(format: "%.0f", nilai))/100")
+                                        .font(.system(size:10))
+                                    
+                                }
                                 HStack{
-                                    Text(dt.namaKd)
-                                        .font(.system(size: 14))
+                                    Text(sdt.keterangan)
+                                        .font(.system(size:10))
                                     Spacer()
                                 }
                                 
+                                Spacer()
                             }
-                            .padding(.leading,30)
-                            .padding(.trailing,30)
-                            .padding(.bottom,15)
+                            
+                            .padding(20)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.gray, lineWidth: 1)
+                            )
+                            
                         }
                         
                     }
-                    .onAppear {
-                        let headers: HTTPHeaders = [
-                            "Authorization": "Bearer " + userToken!,
-                        ]
-                        
-                        let parameters : Parameters = [
-                            "kode_kelas"    : kodeKelas!,
-                            "kode_sem"      : kodeSemester,
-                            "kode_matpel"   : courseCode
-                        ]
-                        
-                        AF.request(detailMapel_url, method: .get,parameters: parameters ,encoding: URLEncoding.queryString, headers: headers ).response {
-                            response in
-                          
-                            switch response.result {
-                            case .success(let data):
-                                let responseData = JSON(data)
-                                let dataKompt = responseData["success"]["data_kompetensi"]
-                                self.detailMatpel = responseData
-                                for item in dataKompt.arrayValue {
-                                    let komp = PreviewDataKompetensi(kodeKd: item["kode_kd"].string!,
-                                                                     namaKd: item["nama_kd"].string!,
-                                                                    pelaksanaan: [],
-                                                                    semester: item["semester"].string!)
-                                    self.dataKompt.append(komp)
-                                }
-                                
-                               
-                                break;
-                            case .failure(let err):
-                               print(err)
-                            }
-                        }
-                    }
+                    .padding(.leading,30)
+                    .padding(.trailing,30)
+                    .padding(.bottom,15)
+                }
+                
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear {
+                ApiService.shareInstance.callingPreviewDetailMapelApi(kodeMatpel: courseCode, kodeSemester: "All") { (response) in
                     
-                    Spacer()
+                    switch response {
+                    case .success(let data):
+                        
+                        let results = (data as! PreviewDetail).success
+                        let dataKomp = results.dataKompetensi
+                        self.dataKompt = dataKomp
+                        
+                        
+                    case .failure(let err):
+                        print("Error")
+                        print(err.localizedDescription)
+                    }
                     
                 }
-                Spacer()
             }
         }
+        
     }
 }
 
