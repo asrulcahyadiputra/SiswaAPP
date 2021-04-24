@@ -16,7 +16,7 @@ struct SemuaView: View {
     @EnvironmentObject var userAuth : LoginController
     
     var body: some View {
-        ScrollView{
+        ScrollView (.vertical){
             
             
             VStack {
@@ -44,8 +44,10 @@ struct SemuaView: View {
                                 }
                                 
                                 HStack {
-                                    var nilai = (sdt.nilai as NSString).doubleValue
+                                    let nilai = (sdt.nilai as NSString).doubleValue
+                                    let kkm = (sdt.kkm as NSString).doubleValue
                                     ProgressView("", value: nilai , total:100 )
+                                        .progressViewStyle(LinearProgressViewStyle(tint: nilai >= kkm ? Color.green : Color.red))
                                     Spacer()
                                     
                                     Text("\(String(format: "%.0f", nilai))/100")
@@ -57,8 +59,23 @@ struct SemuaView: View {
                                         .font(.system(size:10))
                                     Spacer()
                                 }
+                                .padding(.bottom,10)
                                 
-                                Spacer()
+                                HStack{
+                                    Text("\(sdt.tgl) || \(sdt.semester)")
+                                        .font(.system(size:10))
+                                        .foregroundColor(Color.gray)
+                                    Spacer()
+                                    
+                                    Button(action: {
+                                        
+                                       
+                                    }){
+                                        Text("Selengkapnya")
+                                            .font(.system(size: 10))
+                                            .foregroundColor(Color("dark-blue"))
+                                    }
+                                }
                             }
                             
                             .padding(20)
