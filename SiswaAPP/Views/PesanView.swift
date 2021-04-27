@@ -151,8 +151,3 @@ struct InboxView: View {
     }
 }
 
-struct NotifikasiView: View {
-    var body: some View{
-        Text("Notifikasi")
-    }
-}
