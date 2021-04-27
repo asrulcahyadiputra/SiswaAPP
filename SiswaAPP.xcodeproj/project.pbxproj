@@ -18,6 +18,7 @@
 		0440E8752624F0AA0065C40D /* DetailMapelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0440E8742624F0AA0065C40D /* DetailMapelModel.swift */; };
 		04604AB0261AE1E100AD6FE6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04604AAF261AE1E100AD6FE6 /* HomeView.swift */; };
 		048B779D26386FFF000F5A7E /* NotifikasiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B779C26386FFF000F5A7E /* NotifikasiView.swift */; };
+		048B77A026387E59000F5A7E /* GanjilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B779F26387E59000F5A7E /* GanjilView.swift */; };
 		048FC6992629266B00F82F46 /* AkunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC6982629266B00F82F46 /* AkunView.swift */; };
 		04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B72616B92300B68735 /* AppDelegate.swift */; };
 		04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B92616B92300B68735 /* SceneDelegate.swift */; };
@@ -51,6 +52,7 @@
 		0440E8742624F0AA0065C40D /* DetailMapelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapelModel.swift; sourceTree = "<group>"; };
 		04604AAF261AE1E100AD6FE6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		048B779C26386FFF000F5A7E /* NotifikasiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifikasiView.swift; sourceTree = "<group>"; };
+		048B779F26387E59000F5A7E /* GanjilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanjilView.swift; sourceTree = "<group>"; };
 		048FC6982629266B00F82F46 /* AkunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunView.swift; sourceTree = "<group>"; };
 		04DFB5B42616B92300B68735 /* SiswaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiswaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DFB5B72616B92300B68735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				043FB52C26318ECD00181BAB /* SemuaView.swift */,
+				048B779F26387E59000F5A7E /* GanjilView.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				04604AB0261AE1E100AD6FE6 /* HomeView.swift in Sources */,
 				04FE33FB261817B60004D0C3 /* Constant.swift in Sources */,
 				04FE34122618AA3D0004D0C3 /* PesanView.swift in Sources */,
+				048B77A026387E59000F5A7E /* GanjilView.swift in Sources */,
 				0417A5222619700C0053F3E2 /* BlurView.swift in Sources */,
 				04FE33F8261817950004D0C3 /* LoginController.swift in Sources */,
 				04FE340F2618A3000004D0C3 /* TabBarView.swift in Sources */,
