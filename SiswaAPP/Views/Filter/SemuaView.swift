@@ -107,8 +107,8 @@ struct SemuaView: View {
                         let dataKomp = results.dataKompetensi
                         
                         self.dataKompt = dataKomp
-                        print(self.dataKompt)
-                        
+                    //print(self.dataKompt)
+                    
                     case .failure(let err):
                         print("Error")
                         print(err.localizedDescription)

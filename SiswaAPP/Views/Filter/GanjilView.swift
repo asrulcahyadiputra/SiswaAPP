@@ -9,38 +9,63 @@ import SwiftUI
 
 //MARK: -Kategori Semester Ganjil
 struct GanjilView: View {
+    let courseCode: String
+    let kodeSemester : String = "Ganjil"
+    @State var dataKompt = [PreviewDataKompetensi]()
+    @State var errorStatus : Bool = false
+    @EnvironmentObject var userAuth: LoginController
     var body: some View{
         ZStack{
-            ScrollView{
+            ScrollView (.vertical){
                 VStack{
-                    HStack{
-                        Spacer()
-                        Image("no-data")
-                            .resizable()
-                            .frame(width: 200, height: 200)
+                    if(self.errorStatus){
+                        HStack{
+                            Spacer()
+                            Image("no-data")
+                                .resizable()
+                                .frame(width: 200, height: 200)
+                            
+                            Spacer()
+                        }
+                        VStack{
+                            Text("Oops...!")
+                                .foregroundColor(Color("dark-blue"))
+                            Text("Data Semester Ganjil tidak ditemukan")
+                                .foregroundColor(Color("dark-blue"))
+                        }
                         
                         Spacer()
-                    }
-                    VStack{
-                        Text("Oops...!")
-                            .foregroundColor(Color("dark-blue"))
-                        Text("Data tidak ditemukan")
-                            .foregroundColor(Color("dark-blue"))
+                        
+                    }else{
+                        ForEach(self.dataKompt){ dt in
+                            Text("Data here !")
+                            
+                        }
                     }
                     
-                    Spacer()
                     
                 }
-                Spacer()
+                .onAppear{
+                    ApiService.shareInstance.callingPreviewDetailMapelApi(kodeMatpel: courseCode, kodeSemester: "Ganjil") { (response) in
+                        switch response {
+                        case .success(let data) :
+                            let results = (data as! PreviewDetail).success
+                            let dataKomp = results.dataKompetensi
+                            
+                            self.dataKompt = dataKomp
+                            
+                            print(self.dataKompt)
+                        case .failure(let err):
+                            print("error")
+                            self.errorStatus = true
+                            print(err.localizedDescription)
+                        }
+                        
+                    }
+                }
             }
         }
         
     }
 }
 
-
-struct GanjilView_Previews: PreviewProvider {
-    static var previews: some View {
-        GanjilView()
-    }
-}
