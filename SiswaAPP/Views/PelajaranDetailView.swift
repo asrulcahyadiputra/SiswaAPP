@@ -143,35 +143,6 @@ struct TopBar: View {
 
 
 
-//MARK: -Kategori Semeter Genap
-struct GenapView: View {
-    var body: some View{
-        ZStack{
-            ScrollView{
-                VStack{
-                    HStack{
-                        Spacer()
-                        Image("no-data")
-                            .resizable()
-                            .frame(width: 200, height: 200)
-                        
-                        Spacer()
-                    }
-                    VStack{
-                        Text("Oops...!")
-                            .foregroundColor(Color("dark-blue"))
-                        Text("Data tidak ditemukan")
-                            .foregroundColor(Color("dark-blue"))
-                    }
-                    
-                    Spacer()
-                    
-                }
-                Spacer()
-            }
-        }
-    }
-}
 
 
 //MARK: -Parameter Model
