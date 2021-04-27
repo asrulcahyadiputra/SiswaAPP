@@ -21,6 +21,8 @@
 		048B77A026387E59000F5A7E /* GanjilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B779F26387E59000F5A7E /* GanjilView.swift */; };
 		048B77A326387F7A000F5A7E /* GenapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B77A226387F7A000F5A7E /* GenapView.swift */; };
 		048B77A826388BED000F5A7E /* profileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B77A726388BED000F5A7E /* profileView.swift */; };
+		048B77AB26388E11000F5A7E /* akademikView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B77AA26388E11000F5A7E /* akademikView.swift */; };
+		048B77AE26389190000F5A7E /* akunSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B77AD26389190000F5A7E /* akunSettingView.swift */; };
 		048FC6992629266B00F82F46 /* AkunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC6982629266B00F82F46 /* AkunView.swift */; };
 		04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B72616B92300B68735 /* AppDelegate.swift */; };
 		04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B92616B92300B68735 /* SceneDelegate.swift */; };
@@ -57,6 +59,8 @@
 		048B779F26387E59000F5A7E /* GanjilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GanjilView.swift; sourceTree = "<group>"; };
 		048B77A226387F7A000F5A7E /* GenapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenapView.swift; sourceTree = "<group>"; };
 		048B77A726388BED000F5A7E /* profileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileView.swift; sourceTree = "<group>"; };
+		048B77AA26388E11000F5A7E /* akademikView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = akademikView.swift; sourceTree = "<group>"; };
+		048B77AD26389190000F5A7E /* akunSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = akunSettingView.swift; sourceTree = "<group>"; };
 		048FC6982629266B00F82F46 /* AkunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunView.swift; sourceTree = "<group>"; };
 		04DFB5B42616B92300B68735 /* SiswaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiswaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DFB5B72616B92300B68735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				048B77A726388BED000F5A7E /* profileView.swift */,
+				048B77AA26388E11000F5A7E /* akademikView.swift */,
+				048B77AD26389190000F5A7E /* akunSettingView.swift */,
 			);
 			path = Akun;
 			sourceTree = "<group>";
@@ -382,6 +388,8 @@
 				04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */,
 				04604AB0261AE1E100AD6FE6 /* HomeView.swift in Sources */,
 				04FE33FB261817B60004D0C3 /* Constant.swift in Sources */,
+				048B77AE26389190000F5A7E /* akunSettingView.swift in Sources */,
+				048B77AB26388E11000F5A7E /* akademikView.swift in Sources */,
 				04FE34122618AA3D0004D0C3 /* PesanView.swift in Sources */,
 				048B77A026387E59000F5A7E /* GanjilView.swift in Sources */,
 				0417A5222619700C0053F3E2 /* BlurView.swift in Sources */,
