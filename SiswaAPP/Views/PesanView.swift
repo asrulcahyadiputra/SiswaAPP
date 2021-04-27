@@ -30,16 +30,10 @@ struct PesanView: View {
                 Spacer()
             }
         }
-        .ignoresSafeArea(.all, edges: .all)
-        Spacer()
-    }
+        .ignoresSafeArea(.all, edges: .all)    }
 }
 
-struct PesanView_Previews: PreviewProvider {
-    static var previews: some View {
-        PesanView()
-    }
-}
+
 
 
 struct PesanTopBar: View {
