@@ -39,6 +39,6 @@ struct GenapView: View {
 
 struct GenapView_Previews: PreviewProvider {
     static var previews: some View {
-        GenapIView()
+        GenapView()
     }
 }
