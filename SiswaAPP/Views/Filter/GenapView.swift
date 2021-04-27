@@ -9,6 +9,12 @@ import SwiftUI
 
 //MARK: -Kategori Semeter Genap
 struct GenapView: View {
+    let courseCode: String
+    var kodeSemester: String = "Genap"
+    
+    @State var dataKompt = [PreviewDataKompetensi]()
+    @EnvironmentObject var userAuth : LoginController
+    
     var body: some View{
         ZStack{
             ScrollView{
@@ -31,14 +37,27 @@ struct GenapView: View {
                     Spacer()
                     
                 }
-                Spacer()
+                .onAppear{
+                    ApiService.shareInstance.callingPreviewDetailMapelApi(kodeMatpel: courseCode, kodeSemester: "2") { ( response ) in
+                        switch response {
+                        case .success (let data) :
+                            let results = (data as! PreviewDetail).success
+                            
+                            let dataKomp = results.dataKompetensi
+                            
+                            self.dataKompt = dataKomp
+                            
+                            print(self.dataKompt)
+                            
+                        case .failure (let err):
+                            print("error")
+                        }
+                        
+                    }
+                    
+                }
             }
         }
     }
 }
 
-struct GenapView_Previews: PreviewProvider {
-    static var previews: some View {
-        GenapView()
-    }
-}

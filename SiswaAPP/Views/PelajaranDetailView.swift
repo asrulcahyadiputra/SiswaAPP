@@ -81,7 +81,7 @@ struct PelajaranDetailView: View {
                             GanjilView(courseCode: show.kodeMatpel)
                         }
                         else if self.selected == 2 {
-                            GenapView()
+                            GenapView(courseCode: show.kodeMatpel)
                         }
                         
                     }

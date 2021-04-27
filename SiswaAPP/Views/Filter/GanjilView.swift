@@ -37,16 +37,16 @@ struct GanjilView: View {
                         Spacer()
                         
                     }else{
-                        ForEach(self.dataKompt){ dt in
-                            Text("Data here !")
-                            
-                        }
+//                        ForEach(self.dataKompt){ dt in
+//                            Text("Data here !")
+//                            
+//                        }
                     }
                     
                     
                 }
                 .onAppear{
-                    ApiService.shareInstance.callingPreviewDetailMapelApi(kodeMatpel: courseCode, kodeSemester: "Ganjil") { (response) in
+                    ApiService.shareInstance.callingPreviewDetailMapelApi(kodeMatpel: courseCode, kodeSemester: "1") { (response) in
                         switch response {
                         case .success(let data) :
                             let results = (data as! PreviewDetail).success
