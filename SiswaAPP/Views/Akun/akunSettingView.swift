@@ -9,10 +9,12 @@ import SwiftUI
 
 struct akunSettingView: View {
     var body: some View {
-        Text("Akun Setting Viewß")
+        VStack{
+            Text("Pengaturan Profil")
+        }
     }
 }
-
+ 
 struct akunSettingView_Previews: PreviewProvider {
     static var previews: some View {
         akunSettingView()

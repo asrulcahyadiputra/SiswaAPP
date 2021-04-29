@@ -9,7 +9,18 @@ import SwiftUI
 
 struct profileView: View {
     var body: some View {
-        Text("Data Pribadi View")
+        VStack{
+            Text("Data Pribadi")
+            VStack{
+                List{
+                    VStack(alignment: .leading, spacing: 15){
+                        Text("Nama")
+                        Text("Asrul Cahyadi Putra")
+                    }
+                   
+                }
+            }
+        }
     }
 }
 
