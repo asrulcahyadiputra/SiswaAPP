@@ -42,7 +42,7 @@ struct PelajaranDetailView: View {
                             .foregroundColor(.white)
                             .fontWeight(.semibold)
                     }
-                 
+                    
                     .onAppear {
                         ApiService.shareInstance.callingDetailMapelApi(kodeMatpel: show.kodeMatpel, kodeSemester: "All") { (response) in
                             
@@ -69,23 +69,23 @@ struct PelajaranDetailView: View {
                 .padding(.bottom,30)
             }
             .background(Image("bg-detail-image"))
-          
+            
+            VStack{
+                TopBar(selected: $selected)
                 VStack{
-                    TopBar(selected: $selected)
-                    VStack{
-                        
-                        if self.selected == 0 {
-                            SemuaView(courseCode: show.kodeMatpel)
-                        }
-                        else if self.selected == 1 {
-                            GanjilView(courseCode: show.kodeMatpel)
-                        }
-                        else if self.selected == 2 {
-                            GenapView(courseCode: show.kodeMatpel)
-                        }
-                        
+                    
+                    if self.selected == 0 {
+                        SemuaView(courseCode: show.kodeMatpel)
                     }
+                    else if self.selected == 1 {
+                        GanjilView(courseCode: show.kodeMatpel)
+                    }
+                    else if self.selected == 2 {
+                        GenapView(courseCode: show.kodeMatpel)
+                    }
+                    
                 }
+            }
             
             .background(Color.white)
             .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
@@ -109,7 +109,7 @@ struct TopBar: View {
                     .padding(.trailing,20)
                 Button(action: {
                     self.selected = 0
-                  
+                    
                 }){
                     Text("Semua")
                         .padding(.trailing,20)
@@ -117,7 +117,7 @@ struct TopBar: View {
                 }
                 Button(action: {
                     self.selected = 1
-                   
+                    
                 }){
                     Text("Ganjil")
                         .padding(.trailing,20)
@@ -126,7 +126,7 @@ struct TopBar: View {
                 
                 Button(action: {
                     self.selected = 2
-                   
+                    
                 }){
                     Text("Genap")
                         .padding(.trailing,20)

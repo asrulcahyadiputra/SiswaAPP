@@ -25,6 +25,7 @@
 		048B77AE26389190000F5A7E /* akunSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048B77AD26389190000F5A7E /* akunSettingView.swift */; };
 		048FC6992629266B00F82F46 /* AkunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048FC6982629266B00F82F46 /* AkunView.swift */; };
 		04CAF5E22641764D006C7E02 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF5E12641764D006C7E02 /* TestView.swift */; };
+		04CAF5E62641977C006C7E02 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CAF5E52641977B006C7E02 /* ChatView.swift */; };
 		04DFB5B82616B92300B68735 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B72616B92300B68735 /* AppDelegate.swift */; };
 		04DFB5BA2616B92300B68735 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5B92616B92300B68735 /* SceneDelegate.swift */; };
 		04DFB5BC2616B92300B68735 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DFB5BB2616B92300B68735 /* ContentView.swift */; };
@@ -64,6 +65,7 @@
 		048B77AD26389190000F5A7E /* akunSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = akunSettingView.swift; sourceTree = "<group>"; };
 		048FC6982629266B00F82F46 /* AkunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkunView.swift; sourceTree = "<group>"; };
 		04CAF5E12641764D006C7E02 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		04CAF5E52641977B006C7E02 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		04DFB5B42616B92300B68735 /* SiswaAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SiswaAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DFB5B72616B92300B68735 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DFB5B92616B92300B68735 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,14 @@
 			path = Akun;
 			sourceTree = "<group>";
 		};
+		04CAF5E426419768006C7E02 /* Pesan */ = {
+			isa = PBXGroup;
+			children = (
+				04CAF5E52641977B006C7E02 /* ChatView.swift */,
+			);
+			path = Pesan;
+			sourceTree = "<group>";
+		};
 		04DFB5AB2616B92300B68735 = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +187,7 @@
 		04DFB5CD2616B98600B68735 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				04CAF5E426419768006C7E02 /* Pesan */,
 				048B77A626388BD7000F5A7E /* Akun */,
 				043FB52B26318EAC00181BAB /* Filter */,
 				04FE340826186A650004D0C3 /* Core */,
@@ -379,6 +390,7 @@
 				048B779D26386FFF000F5A7E /* NotifikasiView.swift in Sources */,
 				0440E8752624F0AA0065C40D /* DetailMapelModel.swift in Sources */,
 				043FB5362631B80F00181BAB /* PreviewMapelModel.swift in Sources */,
+				04CAF5E62641977C006C7E02 /* ChatView.swift in Sources */,
 				04FE33F0261816C80004D0C3 /* LoginInputModel.swift in Sources */,
 				04FE3403261841820004D0C3 /* MapelModel.swift in Sources */,
 				04FE3400261833C00004D0C3 /* ProfileModel.swift in Sources */,
