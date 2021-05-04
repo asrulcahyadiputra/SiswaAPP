@@ -24,8 +24,8 @@ struct SemuaView: View {
             if(self.errorStatus){
                 Text("Data Ksong Eui")
             }else{
-                ScrollView(.vertical, content: {
-                    LazyVStack(content: {
+                ScrollView(.vertical, showsIndicators: false ,content: {
+                    LazyVStack(alignment: .leading, content: {
                         ForEach(self.dataKompt){ dt in
                             VStack(alignment: .leading){
                                 HStack{

@@ -10,6 +10,7 @@ import SwiftUI
 struct PesanView: View {
     @State var selectedPesan = 0
     var body: some View {
+        
         VStack{
             VStack{
                 VStack{
@@ -78,8 +79,10 @@ struct PesanTopBar: View {
 
 struct InboxView: View {
     var body: some View{
+        
         VStack{
             List{
+                
                 HStack{
                     Image("user")
                         .resizable()
@@ -104,34 +107,7 @@ struct InboxView: View {
                        
                     }
                 }
-               
                 .padding(.bottom,20)
-                HStack{
-                    Image("user")
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                    VStack(alignment: .leading){
-                        Text("Matematika")
-                        Text("Lorem ipsum dolor sit amet, consectetur")
-                            .font(.system(size: 12))
-                            .foregroundColor(.gray)
-                    }
-                    Spacer()
-                    VStack{
-                        Text("31/03/2021")
-                            .foregroundColor(.gray)
-                            .font(.system(size: 14))
-                      
-                       
-                    }
-                    
-                  
-                }
-               
-                .padding(.bottom,20)
-                .padding(.top,20)
-                
-                
             }
             .onAppear {
              UITableView.appearance().separatorStyle = .none
