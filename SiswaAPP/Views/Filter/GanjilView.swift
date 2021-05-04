@@ -34,6 +34,7 @@ struct GanjilView: View {
                                 .foregroundColor(Color("dark-blue"))
                         }
                         
+                        
                         Spacer()
                     }else{
                         ForEach(self.dataKompt){ dt in

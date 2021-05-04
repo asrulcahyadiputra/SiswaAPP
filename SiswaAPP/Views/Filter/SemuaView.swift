@@ -13,6 +13,7 @@ struct SemuaView: View {
     var kodeSemester: String =  "All"
     
     @State var dataKompt = [PreviewDataKompetensi]()
+    @State var halfModal_shown = false
     @EnvironmentObject var userAuth : LoginController
     
     var body: some View {
@@ -71,6 +72,8 @@ struct SemuaView: View {
                                         Spacer()
                                         
                                         Button(action: {
+                                            print("Click Me !!")
+                                            self.halfModal_shown.toggle()
                                         }){
                                             Text("Selengkapnya")
                                                 .font(.system(size: 10))
