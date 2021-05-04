@@ -21,7 +21,11 @@ struct ContentView: View {
             TabView{
                 HomeView()
                     .tabItem{
-                        Label("Pelajaran", image:"fi-rr-test")
+                        Label("Pelajaran", image:"fa-nilai")
+                    }
+                Text("Keuangan")
+                    .tabItem{
+                        Label("Keuangan", image:"fa-keuangan")
                     }
                 PesanView()
                     .tabItem{

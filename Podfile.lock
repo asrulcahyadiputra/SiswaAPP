@@ -1,10 +1,12 @@
 PODS:
   - Alamofire (5.4.2)
+  - BottomSheet (1.0.6)
   - SwiftKeychainWrapper (4.0.1)
   - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - BottomSheet (from `https://github.com/weitieda/bottom-sheet.git`)
   - SwiftKeychainWrapper
   - SwiftyJSON
 
@@ -14,11 +16,21 @@ SPEC REPOS:
     - SwiftKeychainWrapper
     - SwiftyJSON
 
+EXTERNAL SOURCES:
+  BottomSheet:
+    :git: https://github.com/weitieda/bottom-sheet.git
+
+CHECKOUT OPTIONS:
+  BottomSheet:
+    :commit: 98e2ae0b47875faef28e181cf968b9645f7678af
+    :git: https://github.com/weitieda/bottom-sheet.git
+
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
+  BottomSheet: 0a164143e34470cc332db0ce4e55d6da202d7ac6
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: 69e2808fb8dd42d44044fbf71c040b921ab93b62
+PODFILE CHECKSUM: 954cca229aad1a418fa13a9202a85b0ea8505478
 
 COCOAPODS: 1.10.1

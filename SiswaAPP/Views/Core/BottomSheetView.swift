@@ -67,7 +67,7 @@ struct BottomSheet<Content: View>: View {
 
 enum CardPosition: CGFloat {
     case top = 50
-    case bottom = 430
+    case bottom = 400
 }
 
 enum DragState {

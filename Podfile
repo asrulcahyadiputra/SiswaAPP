@@ -9,5 +9,6 @@ target 'SiswaAPP' do
   pod "Alamofire"
   pod "SwiftKeychainWrapper"
   pod "SwiftyJSON"
+  pod 'BottomSheet', :git => 'https://github.com/weitieda/bottom-sheet.git'
 
 end
