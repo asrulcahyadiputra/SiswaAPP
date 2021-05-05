@@ -12,6 +12,7 @@ struct SemuaView: View {
     let courseCode : String
     var kodeSemester: String =  "All"
     
+    @State var showModal : Bool = false
     @State var dataKompt = [PreviewDataKompetensi]()
     @State var halfModal_shown = false
     @State var errorStatus : Bool = false
@@ -26,6 +27,9 @@ struct SemuaView: View {
             }else{
                 ScrollView(.vertical, showsIndicators: false ,content: {
                     LazyVStack(alignment: .leading, content: {
+                        if (self.showModal) {
+                            TestView()
+                        }
                         ForEach(self.dataKompt){ dt in
                             VStack(alignment: .leading){
                                 HStack{
@@ -75,7 +79,7 @@ struct SemuaView: View {
                                             
                                             Button(action: {
                                                 print("Click Me !!")
-                                                self.halfModal_shown.toggle()
+                                                self.showModal = true
                                             }){
                                                 Text("Selengkapnya")
                                                     .font(.system(size: 10))
@@ -97,9 +101,18 @@ struct SemuaView: View {
                             .padding(.trailing,30)
                             .padding(.bottom,15)
                         }
+                        
+                        
+                        
+                      
                     })
+                   
+                   
                     
                 })
+                
+               
+                   
                 
             }
             
@@ -133,6 +146,7 @@ struct SemuaView: View {
                 
             }
         }
+        
     }
 }
 
